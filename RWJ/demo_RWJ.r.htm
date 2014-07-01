@@ -1,1 +1,681 @@
-/cygdrive/m/50_HLP/out/HLP_demo/demo_RWJ.r.htm
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>demo_RWJ.r - RWJ</title>
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+	<style scoped>  /*  www.w3schools.com/cssref/css_colornames.asp  www.tizag.com/cssT/border.php */
+				body {max-width: 95%; font-size: 100%; line-height: 105%;}
+				div.Gallery {background-color:rgb(255,248,248); }	
+				div.TOC {background-color:rgb(248,248,255); }	
+				div.main, .r {font-family: monospace; white-space: pre; max-width: 1000px}
+				p{margin-bottom:2%; margin-top:2%;margin-before: 2%; margin-after: 2%;}
+				code {border: 0px}
+				pre  {border: 1px solid}
+				
+				.D1, .D2, .D3, .D4, .D5  {background-color:rgba(255,240,240, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} /*div {; opacity: 0.3; background-color:GhostWhite; border-left-style:ridge;}  */
+				// code, pre  {background-color:rgba(240,240,255, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} 
+				div.D5 {font-size:8px;} 
+				//.sq {font-size:12px; font-family: Arial; color:DodgerBlue } 
+				center, .capt {font-size:12px; font-weight:bold; font-family: Arial; margin:auto; text-align:center;}
+				.captTOC {font-size:100%; font-weight:bold; font-family: Arial; align:left}
+				H1,  H2,  H3,  H4,  H5 {color:blue; font-family: Arial; color:teal;}
+				.H1, .H2, .H3, .H4, .H5 {color:teal; font-family: Arial; font-weight:bold;  display:inline-block; display:-moz-inline-box;}
+				H1, .H1 {font-size:300%;  margin-top:36px;  margin-bottom:8px;  margin-left:0px; } 
+				H2, .H2 {font-size:250%;  margin-top:28px;  margin-bottom:5px;  margin-left:20px;} 
+				.TOC.H1, H3, .H3 {font-size:200%;  margin-top:15px;  margin-bottom:3px;  margin-left:40px;}
+				.TOC.H2, H4, .H4 {font-size:150%;  margin-top:12px;  margin-bottom:2px;  margin-left:60px;}
+				.TOC.H3, H5, .H5 {font-size:120%;  margin-top:10px;  margin-bottom:1px;  margin-left:80px;}
+				img.fig, .captTOC, img.tnTOC {margin-top:0px;   margin-bottom:0px;  margin-left:10px;} 
+				.TOC.H1, .TOC.H2, .TOC.H3, .TOC.H4, .TOC.H5, span.captTOC, img.tnTOC { display:block;}
+				.D77 { display:inline; }
+				img, .aD, iframe {border-style:none; border:0}
+				/* .dimg{height:90px;  display:inline-block;} /* position:fixed;  position:absolute;*/ 
+				.imgGal{margin-top:1px;   margin-bottom:1px;  margin-left:1px; height:100px} /*height:100%; max-width:100%; max-height:100%; }/* position:absolute; fixed;*/ 
+				
+				.fun {color:indigo; font-weight:bold;}
+				.comment {color:green; align:left}
+				.comment2 {color: rgb(100,200,100); font-size:3px; -webkit-text-size-adjust: none;}
+				.text, .sq {color: teal; font-size:12px;}
+				</style>
+				
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+	<style scoped>  /*  www.w3schools.com/cssref/css_colornames.asp  www.tizag.com/cssT/border.php */
+				body {max-width: 95%; font-size: 100%; line-height: 105%;}
+				div.Gallery {background-color:rgb(255,248,248); }	
+				div.TOC {background-color:rgb(248,248,255); }	
+				div.main, .r {font-family: monospace; white-space: pre; max-width: 1000px}
+				p{margin-bottom:2%; margin-top:2%;margin-before: 2%; margin-after: 2%;}
+				code {border: 0px}
+				pre  {border: 1px solid}
+				
+				.D1, .D2, .D3, .D4, .D5  {background-color:rgba(255,240,240, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} /*div {; opacity: 0.3; background-color:GhostWhite; border-left-style:ridge;}  */
+				// code, pre  {background-color:rgba(240,240,255, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} 
+				div.D5 {font-size:8px;} 
+				//.sq {font-size:12px; font-family: Arial; color:DodgerBlue } 
+				center, .capt {font-size:12px; font-weight:bold; font-family: Arial; margin:auto; text-align:center;}
+				.captTOC {font-size:100%; font-weight:bold; font-family: Arial; align:left}
+				H1,  H2,  H3,  H4,  H5 {color:blue; font-family: Arial; color:teal;}
+				.H1, .H2, .H3, .H4, .H5 {color:teal; font-family: Arial; font-weight:bold;  display:inline-block; display:-moz-inline-box;}
+				H1, .H1 {font-size:300%;  margin-top:36px;  margin-bottom:8px;  margin-left:0px; } 
+				H2, .H2 {font-size:250%;  margin-top:28px;  margin-bottom:5px;  margin-left:20px;} 
+				.TOC.H1, H3, .H3 {font-size:200%;  margin-top:15px;  margin-bottom:3px;  margin-left:40px;}
+				.TOC.H2, H4, .H4 {font-size:150%;  margin-top:12px;  margin-bottom:2px;  margin-left:60px;}
+				.TOC.H3, H5, .H5 {font-size:120%;  margin-top:10px;  margin-bottom:1px;  margin-left:80px;}
+				img.fig, .captTOC, img.tnTOC {margin-top:0px;   margin-bottom:0px;  margin-left:10px;} 
+				.TOC.H1, .TOC.H2, .TOC.H3, .TOC.H4, .TOC.H5, span.captTOC, img.tnTOC { display:block;}
+				.D77 { display:inline; }
+				img, .aD, iframe {border-style:none; border:0}
+				/* .dimg{height:90px;  display:inline-block;} /* position:fixed;  position:absolute;*/ 
+				.imgGal{margin-top:1px;   margin-bottom:1px;  margin-left:1px; height:100px} /*height:100%; max-width:100%; max-height:100%; }/* position:absolute; fixed;*/ 
+				
+				.fun {color:indigo; font-weight:bold;}
+				.comment {color:green; align:left}
+				.comment2 {color: rgb(100,200,100); font-size:3px; -webkit-text-size-adjust: none;}
+				.text, .sq {color: teal; font-size:12px;}
+				</style>
+				
+<style scoped>  /*  www.w3schools.com/cssref/css_colornames.asp  www.tizag.com/cssT/border.php */
+				.TOC.fig, .imgGal{margin-top:1px;   margin-bottom:1px;  margin-left:1px; height:130px}
+				.TOC.H1, .TOC.H2, .TOC.H3 {display:block}
+				</style> <!-- ================================================================== -->
+# <a href="#" id= "aToggleAll">Fold</a> All |
+				<a href="#" class= "aToggleAllFig">Toggle</a> all figs | 
+				<a href="#" class= "aToggle Gallery">Fold</a> Gallery |
+				<a href="#" class= "aToggle TOContents">Fold</a> TOC |
+				<a href="#" class= "aToggle DD2">Fold</a> H2 |
+				<a href="#" class= "aToggle DD3">Fold</a> H3 |
+				<a href="#" class= "aToggle DD4">Fold</a> H4 |
+				<a href="#" class= "aToggleComments">Toggle</a> Comments |
+				<a href="javascript:linutoggle()" >Toggle</a> Line Numbers <span id="out"></span></br>
+<div class="Gallery"> <H3>Gallery for  
+M:\50_HLP\out\HLP_demo\demo_RWJ.r
+ </H3>
+<img id="tnfig128" class="imgGal" src="img/Fig_1.png" height=140 alt="Fig_1. test sg I"/>
+<img id="tnfig132" class="imgGal" src="img/Fig_2.png" height=140 alt="Fig_2. Test sg sin"/>
+<img id="tnfig137" class="imgGal" src="img/Fig_3.png" height=140 alt="Fig_3. Test sg exp"/>
+<img id="tnfig138" class="imgGal" src="img/Fig_1.png" height=140 alt="Fig_1.  Test sg I - again"/>
+<img id="tnfig146" class="imgGal" src="img/Fig_4.png" height=140 alt="Fig_4. ggplot: Smoothed \(\cos{x^2}\) "/>
+<iframe id="fig156" class="imgGal" src="img/jFig_1.htm" width=300 height=140 style="-ms-zoom: 0.25" name="jFig_1. D3 Simple Network"></iframe>
+<img id="tnfig164" class="imgGal" src="img/Fig_5.png" height=140 alt="Fig_5. test 2 sg exp"/>
+<img id="tnfig165" class="imgGal" src="img/Fig_6.png" height=140 alt="Fig_6. test 3 sg exp"/>
+<img id="tnfig166" class="imgGal" src="img/Fig_7.png" height=140 alt="Fig_7. test 4 sg exp"/>
+
+
+<hr/></div> <div class="TOContents" id="0"> <H2>Table of Contents</H2>
+<span class="TOC H3" id="TOC4" title="4">headers</span>
+<span class="TOC H3" id="TOC7" title="7">Init </span>
+<span class="TOC H1" id="TOC39" title="39">  HLP_demo  </span>
+<span class="TOC H2" id="TOCmd45">Usage of Markdown</span>
+<span class="TOC H3" id="TOCmd47">md - numbered list</span>
+<span class="TOC H3" id="TOCmd62">Creation of a Project</span>
+<span class="TOC H4" id="TOCmd78">Shell script inserts</span>
+<span class="TOC H5" id="TOCmd87">Links:</span>
+<span class="TOC H3" id="TOCmd98">Usage of  \(\LaTeX\)  and quoted multiline text.</span>
+<span class="TOC H2" id="TOC124" title="124"> Test plots</span>
+<img id="TOCfig128" class="TOCfig" src="img/Fig_1.png" width=250 alt="Fig_1. test sg I" title="Fig_1. test sg I"/>
+<img id="TOCfig132" class="TOCfig" src="img/Fig_2.png" width=250 alt="Fig_2. Test sg sin" title="Fig_2. Test sg sin"/>
+<img id="TOCfig137" class="TOCfig" src="img/Fig_3.png" width=250 alt="Fig_3. Test sg exp" title="Fig_3. Test sg exp"/>
+<img id="TOCfig138" class="TOCfig" src="img/Fig_1.png" width=250 alt="Fig_1.  Test sg I - again" title="Fig_1.  Test sg I - again"/>
+<span class="TOC H3" id="TOC141" title="141"> ggplot</span>
+<img id="TOCfig146" class="TOCfig" src="img/Fig_4.png" width=250 alt="Fig_4. ggplot: Smoothed \(\cos{x^2}\) " title="Fig_4. ggplot: Smoothed \(\cosx^2}\) "/>
+<span class="TOC H3" id="TOC149" title="149"> d3 plots</span>
+<iframe id="TOCfig156" class="jfig" src="img/jFig_1.htm" width=300 height=140 style="-ms-zoom: 0.25" title="jFig_1. D3 Simple Network"></iframe>
+<span class="TOC H3" id="TOC158" title="158"> 4 stars plots</span>
+<img id="TOCfig164" class="TOCfig" src="img/Fig_5.png" width=250 alt="Fig_5. test 2 sg exp" title="Fig_5. test 2 sg exp"/>
+<img id="TOCfig165" class="TOCfig" src="img/Fig_6.png" width=250 alt="Fig_6. test 3 sg exp" title="Fig_6. test 3 sg exp"/>
+<img id="TOCfig166" class="TOCfig" src="img/Fig_7.png" width=250 alt="Fig_7. test 4 sg exp" title="Fig_7. test 4 sg exp"/>
+<span class="TOC H3" id="TOC170" title="170">Misc   (cache, parking lot)</span>
+<hr/></div><br/>
+						<!-- pre --><div class="main">
+<pre><code class="r 1"><span id="sp1" class="linu" onclick="gotop()">1  </span>#! /usr/bin/Rscript
+<span id="sp2" class="linu" onclick="gotop()">2  </span># Project  : HLP_demo
+<span id="sp3" class="linu" onclick="gotop()">3  </span># File     : HLP_demo/demo_RWJ.r
+<span id="sp4" class="linu" onclick="gotop()">4  </span># no<span class="comment2"> #=== </span><span class="H3" id="4" title="4">headers</span> <span class="comment2"></span>
+<span id="sp5" class="linu" onclick="gotop()">5  </span>###############################################################################
+
+<span id="sp7" class="linu" onclick="gotop()">7  </span>if(init&lt;- 1) {<span class="comment"> #### <span class="H3" id="7" title="7">Init ===</span></span> <span class="comment2"></span> <a href="javascript:ToggleFold(7)" id="asp7"><img src="" alt="-" class="fold" /></a>
+								</code></pre><div class="D-fold" id="D7"><pre><code class="r div">
+<span id="sp8" class="linu" onclick="gotop()">8  </span>    rm(list=ls(envir = .GlobalEnv), envir = .GlobalEnv)
+
+<span id="sp10" class="linu" onclick="gotop()">10  </span>    options(help=&#39;html&#39;, digits=4, width=3999, scipen=5, repos = c(CRAN= &quot;http://cran.rstudio.com&quot;)
+<span id="sp11" class="linu" onclick="gotop()">11  </span>            , error= NULL)<span class="comment"> # options(error= recover) options(error=dump)  #or options(error=NULL) getOption(&#39;width&#39;)</span>
+
+<span id="sp13" class="linu" onclick="gotop()">13  </span>    library(HaLaP)
+<span id="sp14" class="linu" onclick="gotop()">14  </span>    library(WorkJournal)
+<span id="sp15" class="linu" onclick="gotop()">15  </span>    if(fromSrc &lt;- 1) source(&#39;m:/50_HLP/out/packages/HaLaP/inst/rcode/HLP.r&#39;)<span class="comment"> # T:/work/UseR-2013/lib/zBase0.r</span>
+<span id="sp16" class="linu" onclick="gotop()">16  </span>   <span class="comment"> #if(fromSrc &lt;- 1) source(&#39;m:/50_HLP/out/packages/WorkJournal/inst/rcode/WorkJournal.r&#39;) # T:/work/UseR-2013/lib/zCode.r</span>
+<span id="sp17" class="linu" onclick="gotop()">17  </span>    if(fromSrc &lt;- 1) source(&#39;m:/50_HLP/out/packages/WorkJournal/inst/rcode/RWJ.r&#39;)<span class="comment"> # T:/work/UseR-2013/lib/zCode.r</span>
+
+<span id="sp19" class="linu" onclick="gotop()">19  </span>   <span class="comment"> #source(&#39;T:/work/UseR-2013/lib/zBase1.r&#39;)  </span>
+
+<span id="sp21" class="linu" onclick="gotop()">21  </span>    root= &#39;m:/50_HLP/out&#39;
+<span id="sp22" class="linu" onclick="gotop()">22  </span>    proot= fp(root, &#39;HLP_demo&#39;) <span class="comment"> # project root</span>
+<span id="sp23" class="linu" onclick="gotop()">23  </span>    theFile= fp(proot, &#39;demo_RWJ2.r&#39;)
+<span id="sp24" class="linu" onclick="gotop()">24  </span>    options(theFile= theFile)
+<span id="sp25" class="linu" onclick="gotop()">25  </span>   <span class="comment"> # [1] &quot;m:/50_HLP/out/HLP_demo/HLP_demo.r&quot;</span>
+<span id="sp26" class="linu" onclick="gotop()">26  </span>    palette(&#39;default&#39;)
+<span id="sp27" class="linu" onclick="gotop()">27  </span>    palette(adjustcolor(palette(), alpha.f = .8)) <span class="comment"> ##ex: plot(1:19, pch=16, col=1:19, cex=3) palette()</span>
+
+
+<span id="sp30" class="linu" onclick="gotop()">30  </span>    sw(fp(proot, &#39;out&#39;))
+
+
+<span id="sp33" class="linu" onclick="gotop()">33  </span>   <span class="comment"> # catf(&#39;\ndetach(&quot;%s&quot;,  character.only = TRUE)&#39;, grep(&#39;^pac&#39;, search(), v=T))</span>
+<span id="sp34" class="linu" onclick="gotop()">34  </span>   <span class="comment"> # gff(&#39;saved&#39;, theFile)</span>
+<span id="sp35" class="linu" onclick="gotop()">35  </span>   <span class="comment"> # rmDF(); loo(); lo(); lsDF();</span>
+<span id="sp36" class="linu" onclick="gotop()">36  </span><b>}</b></code></pre></div><pre><code class="r fold"> <span class="comment2">#--</span>
+<span id="sp37" class="linu" onclick="gotop()">37  </span>##########################################################
+
+<span id="sp39" class="linu" onclick="gotop()">39  </span>## <span class="H1" id="39" title="39">  HLP_demo  ==</span> <span class="comment2"></span>
+
+</code></pre>
+
+<p>&#39;</p>
+
+<span class="H2" id="md45">Usage of Markdown</span>
+
+<span class="H3" id="md47">md - numbered list</span>
+
+<ol>
+<li>aaa</li>
+<li>bbb
+&#39;</li>
+</ol>
+
+<pre><code class="r 47">
+<span id="sp49" class="linu" onclick="gotop()">49  </span>x= 1:9<span class="comment"> # <font color="red">TODO: change it</font></span>
+<span id="sp50" class="linu" onclick="gotop()">50  </span>y= 2  <span class="comment"> # <font color="red">xxx:  change it too</font></span>
+</code></pre>
+
+<p>&quot;</p>
+
+<span class="H3" id="md62">Creation of a Project</span>
+
+<p><em>(header 2)</em></p>
+
+<p>This file <code>HLP_demo/HLP_demo.r</code> was <em>initially</em> created as result of</p>
+
+<pre><code>    CreateNewProj(newProj.name= &#39;HLP_demo&#39;, Templ.dir= &#39;m:/50_HLP/out/packages/newProjTemplName&#39;, root=&#39;m:/50_HLP/out&#39;)
+</code></pre>
+
+<p>&quot;</p>
+
+<pre><code class="r 59"><span id="sp60" class="linu" onclick="gotop()">60  </span>z= 3
+</code></pre>
+
+<p>&#39;       </p>
+
+<span class="H4" id="md78">Shell script inserts</span>
+
+<p><em>(header 3)</em>
+    cd /cygdrive/m/50_HLP/bbwiki/wiki  ; cp ../../out/book/md/*.md .
+    rm toc.md
+    touch toc.md
+    for f in *.md ;{ echo &quot;<a href="$f:gs/%20/_/">$f</a>\n&quot; &gt;&gt; toc.md}
+    &lt;toc.md</p>
+
+<span class="H5" id="md87">Links:</span>
+
+<ul>
+<li>\(\href{http://www.forkosh.com/mimetextutorial.html}{ \LaTeX \ link: \ try  \  mathTeX  \  tutorial} \quad \href{http://www.codecogs.com/latex/eqneditor.php}{\LaTeX}\) </li>
+<li><a href="http://www.edii.uclm.es/~useR-2013/"> UseR! - 2013</a>, </li>
+<li><a href="http://user2014.stat.ucla.edu/">UseR! - 2014</a></li>
+<li><a href="http://www.forkosh.com/mimetextutorial.html">mathTeX tutorial</a></li>
+</ul>
+
+<p>Pic: <img src="http://cran.r-project.org/Rlogo.jpg" alt="R logo"> </p>
+
+<span class="H3" id="md98">Usage of  \(\LaTeX\)  and quoted multiline text.</span>
+
+<p>Any text can be between quotes or backticks, but if we need 
+to use \(\LaTeX\) formulae, we should use symbol &quot;@&quot; instead of &quot;\&quot;, to prevent <em>&quot;unrecognised escape sequence&quot;</em> error during the <code>R</code> code execution,
+including <em>inline</em>  (\(y= 5 \sqrt{x_4^11}\) , \(\exp(-\infty) = 0\)  - <strong>no</strong> <em>whitespace</em> adjacent to 
+the $ delimiters -
+see <a href="http://www.rstudio.com/ide/docs/authoring/using_markdown_equations">Equations in R Markdown</a> 
+) as well as <em>stand along</em> equations: </p>
+
+<p>\begin{aligned}
+\nabla \times \vec{\mathbf{B}} - \, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \
+\nabla \times \vec{\mathbf{E}}\, + \, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}</p>
+
+<p>\[  g\frac{d^2u}{dx^2} + L\sin u = 0 ; \quad  \sum_{n=1}^\infty {1\over n^2} = {\pi^2\over 6}  \]
+or
+\[
+\int\limits_{x^2 + y^2 \leq R^2} f(x,y)\,dx \,dy
+= \int\limits_{\theta=0}^{2\pi}\ \int\limits_{r=0}^R f(r\cos\theta,r\sin\theta) r\,dr\,d\theta  
+\]
+or with scale tag:</p>
+
+<div style="font-size: 130%;">
+$$
+\int\limits_{x^3 + y^2 \leq R^2} f(x,y)\,dx \,dy
+= \int\limits_{\theta=0}^{2\pi}\ \int\limits_{r=0}^R f(r\cos\theta,r\sin\theta) r\,dr\,d\theta  
+$$
+</div>
+
+<p>or with change of color:</p>
+
+<div style="color:blue;">
+$$ y = \sum{x_i^2}  $$ 
+</div>
+
+<p>&#39;           </p>
+
+<pre><code class="r 112"><span id="sp113" class="linu" onclick="gotop()">113  </span>           <span class="comment"> #   Behind comments  &quot;#&quot; we can use single  &quot;\&quot;  </span>
+<span id="sp114" class="linu" onclick="gotop()">114  </span>           <span class="comment"> #   in  $\LaTeX$  expressions, including inline  \(y= 5 \sqrt{x_4^3}\) as well as stand alone equations. </span>
+
+
+<span id="sp117" class="linu" onclick="gotop()">117  </span>           <span class="comment"> #&#39;  The same behind roxigen &quot;#&#39;&quot; comments: </span>
+<span id="sp118" class="linu" onclick="gotop()">118  </span>           <span class="comment"> #&#39;          </span>
+<span id="sp119" class="linu" onclick="gotop()">119  </span>           <span class="comment"> #&#39;          \($  g\frac{d^2u}{dx^2} + L\sin u = 0 ; \quad  \sum_{n=1}^\infty {1\over n^2} = {\pi^2\over 6}  $\)</span>
+<span id="sp120" class="linu" onclick="gotop()">120  </span>           <span class="comment"> #&#39;          or</span>
+<span id="sp121" class="linu" onclick="gotop()">121  </span>           <span class="comment"> #&#39;      \($  \int\limits_{x^2 + y^2 \leq R^2} f(x,y)\,dx\,dy  = \int\limits_{\theta=0}^{2\pi}\ \int\limits_{r=0}^R f(r\cos\theta,r\sin\theta) r\,dr\,d\theta   $\)</span>
+
+
+<span id="sp124" class="linu" onclick="gotop()">124  </span>           <span class="comment"> ### <span class="H2" id="124" title="124"> Test plots</span></span> <span class="comment2"></span>
+
+<span id="sp126" class="linu" onclick="gotop()">126  </span>            ww(); symbols(x, x, cir=x, fg=x, bg=x, inc=3.9, ma=&#39;test sg I&#39;)
+<span id="sp127" class="linu" onclick="gotop()">127  </span>            sg(&#39;test sg I&#39;)
+<br/></code><code class="r"><img id="fig128" class="fig" src="img/Fig_1.png" width=700 alt="Fig_1. test sg I"/>   
+						<br/><span class="capt">Fig_1. test sg I</span><br/>
+
+<span id="sp130" class="linu" onclick="gotop()">130  </span>            ww(); symbols(x, sin(x), sq=x, fg=x, bg=x, inc=3.9, ma=&#39;test sg sin&#39;)
+<span id="sp131" class="linu" onclick="gotop()">131  </span>            sg(&#39;test sg sin&#39;)
+<br/></code><code class="r"><img id="fig132" class="fig" src="img/Fig_2.png" width=700 alt="Fig_2. Test sg sin"/>   
+						<br/><span class="capt">Fig_2. Test sg sin</span><br/>
+
+<span id="sp134" class="linu" onclick="gotop()">134  </span>            ww(); symbols(x, exp(-x), star= matrix(rbeta(30, 1,2), le(x)), fg=x, bg=x, inc=.9, ma=&#39;test sg exp&#39;)
+<span id="sp135" class="linu" onclick="gotop()">135  </span>            ww(); symbols(x, exp(-x), cir=x, fg=x, bg=x, inc=3.9, ma=&#39;test sg exp&#39;)
+<span id="sp136" class="linu" onclick="gotop()">136  </span>            sg(&#39;test sg exp&#39;)
+<br/></code><code class="r"><img id="fig137" class="fig" src="img/Fig_3.png" width=700 alt="Fig_3. Test sg exp"/>   
+						<br/><span class="capt">Fig_3. Test sg exp</span><br/>
+<br/></code><code class="r"><img id="fig138" class="fig" src="img/Fig_1.png" width=700 alt="Fig_1.  Test sg I - again"/>   
+						<br/><span class="capt">Fig_1.  Test sg I - again</span><br/>
+<span id="sp139" class="linu" onclick="gotop()">139  </span>           <span class="comment"> # xFig_6. test sg</span>
+
+<span id="sp141" class="linu" onclick="gotop()">141  </span>           <span class="comment"> #### <span class="H3" id="141" title="141"> ggplot    </span></span> <span class="comment2"></span>
+<span id="sp142" class="linu" onclick="gotop()">142  </span>            libra(ggplot2)
+<span id="sp143" class="linu" onclick="gotop()">143  </span>           <span class="comment"> #qplot(x, cos(x^2), col= sample(2:4, 9, re=T), main=expression(&#39;Smoothed ~ &#39; %+% plain(cos)(x^2)&#39;), geom=cn(&#39;point smooth&#39;))</span>
+<span id="sp144" class="linu" onclick="gotop()">144  </span>            ww(); qplot(x, cos(x^2), col= sample(2:4, 9, re=T), main=expression(paste(&#39;Smoothed &#39;, plain(cos)(x^2))), geom=cn(&#39;point smooth&#39;))
+<span id="sp145" class="linu" onclick="gotop()">145  </span>            sg(&#39;ggplot: Smoothed $ \cos(x^2) $ &#39;, gg=T)
+<br/></code><code class="r"><img id="fig146" class="fig" src="img/Fig_4.png" width=700 alt="Fig_4. ggplot: Smoothed \(\cos{x^2}\) "/>   
+						<br/><span class="capt">Fig_4. ggplot: Smoothed \(\cos{x^2}\) </span><br/>
+
+
+<span id="sp149" class="linu" onclick="gotop()">149  </span>           <span class="comment"> #### <span class="H3" id="149" title="149"> d3 plots</span></span> <span class="comment2"></span>
+<span id="sp150" class="linu" onclick="gotop()">150  </span>            libra(d3Network)
+<span id="sp151" class="linu" onclick="gotop()">151  </span>            d3SimpleNetwork(df(source=sample(1:9, 9, re=T),  target=sample(1:9, 9, re=T)
+<span id="sp152" class="linu" onclick="gotop()">152  </span>                            , fontsize = 15, linkColour = &#39;#FF0000&#39;
+<span id="sp153" class="linu" onclick="gotop()">153  </span>                            , nodeColour = sample(cn(&#39;#0000FF<span class="comment"> #FF0000 #00FF00&#39;), 9, re=T)), file=&#39;.htm&#39;)</span>
+<span id="sp154" class="linu" onclick="gotop()">154  </span>            expl(&#39;.htm&#39;)
+<span id="sp155" class="linu" onclick="gotop()">155  </span>            sgd3()
+<br/></code><code class="r"><iframe id="fig156" class="jfig" src="img/jFig_1.htm" width="100%"  height="600px" name="jFig_1. D3 Simple Network"></iframe>  
+						<br/><span class="capt">jFig_1. D3 Simple Network</span><br/>
+
+<span id="sp158" class="linu" onclick="gotop()">158  </span>           <span class="comment"> #### <span class="H3" id="158" title="158"> 4 stars plots </span></span> <span class="comment2"></span>
+<span id="sp159" class="linu" onclick="gotop()">159  </span>            for(i in 3:5) {ww();  <a href="javascript:ToggleFold(159)" id="asp159"><img src="" alt="-" class="fold" /></a>
+								</code></pre><div class="D-fold" id="D159"><pre><code class="r div">
+<span id="sp160" class="linu" onclick="gotop()">160  </span>                symbols(x, exp(-x), star= matrix(rbeta(i*10, 1, 2), le(x)), fg=x, bg=x, inc=.9
+<span id="sp161" class="linu" onclick="gotop()">161  </span>                , ma=sf(&#39;test %s sg exp&#39;, i))
+<span id="sp162" class="linu" onclick="gotop()">162  </span>                sg(sf(&#39;test %s sg exp&#39;, i))
+<span id="sp163" class="linu" onclick="gotop()">163  </span>            <b>}</b></code></pre></div><pre><code class="r fold">
+<br/></code><code class="r"><img id="fig164" class="fig" src="img/Fig_5.png" width=700 alt="Fig_5. test 2 sg exp"/>   
+						<br/><span class="capt">Fig_5. test 2 sg exp</span><br/>
+<br/></code><code class="r"><img id="fig165" class="fig" src="img/Fig_6.png" width=700 alt="Fig_6. test 3 sg exp"/>   
+						<br/><span class="capt">Fig_6. test 3 sg exp</span><br/>
+<br/></code><code class="r"><img id="fig166" class="fig" src="img/Fig_7.png" width=700 alt="Fig_7. test 4 sg exp"/>   
+						<br/><span class="capt">Fig_7. test 4 sg exp</span><br/>
+
+
+
+<span id="sp170" class="linu" onclick="gotop()">170  </span>    if(0){  <span class="comment"> #### <span class="H3" id="170" title="170">Misc   (cache, parking lot)</span></span> <span class="comment2"></span> <a href="javascript:ToggleFold(170)" id="asp170"><img src="" alt="-" class="fold" /></a>
+								</code></pre><div class="D-fold" id="D170"><pre><code class="r div">
+<span id="sp171" class="linu" onclick="gotop()">171  </span>        theFile= &#39;m:/50_HLP/out/HLP_demo/demo_RWJ.r&#39;
+<span id="sp172" class="linu" onclick="gotop()">172  </span>        rwj(&#39;m:/50_HLP/out/HLP_demo/demo_RWJ.r&#39;)
+<span id="sp173" class="linu" onclick="gotop()">173  </span>        gff(&#39;saved&#39;, theFile)
+<span id="sp174" class="linu" onclick="gotop()">174  </span>        gff(&#39;sa\\(|===&#39;, theFile)
+
+<span id="sp176" class="linu" onclick="gotop()">176  </span>        ReleaseOut(vers=&#39;.rwj0&#39;, exec=T)
+
+<span id="sp178" class="linu" onclick="gotop()">178  </span>        u= gregexpr(patt&lt;- &#39;&lt;.?pre&gt;&#39;, ss&lt;- readLines(&#39;m:/50_HLP/out/HLP_demo/HLP_demo.r.htm&#39;))
+<span id="sp179" class="linu" onclick="gotop()">179  </span>        prr(ss[laply(u, `[`, 1) &gt; 0])
+<span id="sp180" class="linu" onclick="gotop()">180  </span>        i= which(laply(u, `[`, 1) &gt; 0)
+<span id="sp181" class="linu" onclick="gotop()">181  </span>        u[[179]]
+<span id="sp182" class="linu" onclick="gotop()">182  </span>        u[[180]]
+<span id="sp183" class="linu" onclick="gotop()">183  </span>        prr(ss[179:180])
+<span id="sp184" class="linu" onclick="gotop()">184  </span>        s= laply(grege(&#39;&lt;.?pre&gt;&#39;, ss), `%+%`)
+
+<span id="sp186" class="linu" onclick="gotop()">186  </span>        grege(&#39;&lt;.?pre&gt;&#39;, ss)[i]
+<span id="sp187" class="linu" onclick="gotop()">187  </span>    <b>}</b></code></pre></div><pre><code class="r fold"> <span class="comment2">#--</span>
+
+
+</code></pre>
+
+</div><!-- /pre --><br>##   The HTML output of 
+M:\50_HLP\out\HLP_demo\demo_RWJ.r
+ was created on 
+2014-06-30 22:11:12
+; <a href="http://www.mathjax.org/demos/scaling-math/">test MathJax </a>
+	<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+				
+				<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+				
+				<script>
+				
+				var d= document;  
+				var imgFold= "<img src='data:image/jpeg;base64,R0lGODlhDQAMAJEAAAAAAP///2NlY////yH5BAEAAAMALAAAAAANAAwAAAIYnI+pK+2OBIvzSHWNfJtin2SDaEUctCwFADs=' alt='-'/>";
+				var srcMinus="data:image/jpeg;base64,R0lGODlhDQAMAJEAAAAAAP///2NlY////yH5BAEAAAMALAAAAAANAAwAAAIYnI+pK+2OBIvzSHWNfJtin2SDaEUctCwFADs=";
+				
+				$(document).ready(function(){
+				
+				
+				$(".fold").src= srcMinus;
+				
+				$(".figz").each(function(){   //copy src from gallery to TOC and main - for base64 nOK!
+				cl(this.id)
+				this.src= $("#tn" + this.id).src
+				$("#TOC" + this.id).attr("src",  this.src)
+				})
+				
+				//http://stackoverflow.com/questions/5540561/jquery-click-event-not-firing
+				$(".fig").click(function(e) {e.preventDefault(); 
+				for(k in e) if(e[k] != null && k.match(/width|css|style/)) cl("fig.e[" + k + "]= " + e[k]); 
+				w=this.width; 
+				$(this).css({width: (w==700)? 1000 :  (w==1000)? 1200 : (w==1200)? "100%" : 700})
+				})
+				.dblclick(function(e) {e.preventDefault(); ShowImg(this.src, this.alt, e.ctrlKey) });
+				
+				$("img.imgGal, img.TOCfig")
+				.mouseover(function() {this.title= this.alt; show(this) })
+				.mouseout(function() { show(0) })
+				.click(function() {gotoo(this.id.replace("tn","").replace("TOC","")) })
+				.dblclick(function(e) { e.preventDefault(); ShowImg(this.src, this.alt, e.ctrlKey) });
+				
+				
+				$("span.TOC").click(function() {gotoo(this.id.replace("TOC","")) })
+				
+				
+				$(".aToggle.DD1").click(function() {toggleD($(this), $(".H1 + + .aD"), $(".D1")) })
+				$(".aToggle.DD2").click(function() {toggleD($(this), $(".H2 + + .aD"), $(".D2")) })
+				$(".aToggle.DD3").click(function() {toggleD($(this), $(".H3 + + .aD"), $(".D3")) })
+				$(".aToggle.DD4").click(function() {toggleD($(this), $(".H4 + + .aD"), $(".D4")) })
+				$(".aToggle.TOContents").click(function() {toggleD($(this), $(".zz"), $("div.TOContents")) })
+				$(".aToggle.Gallery").click(function() {toggleD($(this), $(".zz"), $("div.Gallery")) })
+				$(".aToggleAllFig").click(function()   {toggleD($(this), $(".zz"), $("img,iframe"))}) //xxx: ; toggleD($(this), $(".zz"), $("iframe")) 
+				//$(".linu").click(function() { $("body").scrollTop(0) })
+				
+				$("#aToggleAll").click(function() {th= $(this)
+				if( th.text() =="(+)") {
+				$("div").show(); th.html(imgFold); $("a:not(.comments)").html(imgFold)   
+				} else { $("div").hide(); th.html("(+)"); $("a:not(.comments)").html("(+)")}
+				})
+				
+				
+				$(".aToggleComments").click(function() {ToggleComments2();})
+				
+				// $(".aD").click(function() //zzz does not work inside <code> can be explicitly call <a href="javascript:alert();" class="aD">
+				
+				})
+				</script>
+				<script>
+				
+				function cl(x){console.log(x)}
+				
+				function gotoo(i) {w= d.location= "#" + i;}
+				function gotop() {d.body.scrollTop = d.documentElement.scrollTop = 0}
+				
+				function linutoggle() {$("span.linu").toggle()}
+				
+				function ToggleFold(d){ 
+				$("#D" + d).animate({ height:"toggle"}, 600); th= $("#asp" + d); 
+				th.html(th.html()== "...}"  ? imgFold : "...}")
+				}
+				
+				function resize0(e) { w= e.width;
+				e.style.width= (w==700)? 1000 :  (w==1000)? 1200 : (w==1200)? "100%" : 700;
+				}
+				
+				function resize(i) {e=d.getElementById(i); w= e.width;
+				e.style.width= (w==700)? 1000 :  (w==1000)? 1200 : (w==1200)? "100%" : 700;
+				}
+				
+				
+				function ShowImg(src, capt, ctrl){ 
+				if(ctrl) {src= src.replace("png", "pdf")};
+				w= window.open(src, capt, "type=fullWindow,fullscreen,location='',height="+ screen.height+ ",width="+screen.width)
+				if(ctrl) { w.document.location= src} else {w.document.write("<html><title>" +  capt + "</title>" + capt + "<br/><img src='"  + src + "' /> </html>")};
+				w.title= capt;
+				w.document.title= capt;
+				w.focus()
+				}
+				
+				
+				function show(e){
+				$("#show").css({display : (e==0)? "none" : "block", border: (e==0)? "0" : "2px solid blue"})
+				
+				if(e != 0){
+				x= Math.min(e.offsetLeft+ e.width + 10, 500) //x= e.x+ e.width + 10;// ; if(x > 500) x= 500;
+				y= e.offsetTop+ e.height + 10               //y= e.y+ e.height + 10
+
+cl("e.src= " + e.src);
+				
+				$("#show").css({left: x, top: y})
+				$("#showFig").attr("src", e.src)
+				$("#showTxt").html("<br/>" +  e.alt)  //  +  e.alt)
+				
+				/* show properties of e 
+				for(k in e) if(1 || e[k] > 10 && e[k]+" " < "a") cl("e[" + k + "]= " + e[k]);
+				//for(k in e) if(e[k] != null && k.match(/^src$|^id$/)) {cl("e[" + k + "]= " + e[k])}; 
+				*/
+				}
+				}
+				
+				</script>
+<script>	
+				function toggleD(a, a2, di){ if( a.text() == "(+)") {
+				di.show(); a.html(imgFold); a2.html(imgFold)  
+				} else { di.hide(); a.html("(+)"); a2.html("...")}
+				}
+				
+				function ToggleComments2(){ 
+				var tt = document.getElementsByClassName("comment2"); 
+				var t0= tt[0].style.fontSize;
+				di= (t0 == "3px" || t0 == "") ? "12px" : ((t0 == "12px")? "1px" : "3px") ;
+				fc=  di == "1px" ? "white" : "green";
+				for (var i = 0; i < tt.length; i++) {tt[i].style.fontSize = di; tt[i].style.color=fc;}
+				}
+				</script>
+				
+<div id= "show" style= "position: absolute; left:-1000px; top:1px; border:solid blue; padding:5; display:none; background-color:white; -moz-border-radius: 10px; border-radius: 10px;">
+				<span id="showTxt"></span><br/>
+				<img id="showFig" src="#" height="401" style="left:0px" alt=""/>
+				</div>
+</body>
+</html>
