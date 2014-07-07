@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>demo_HLP.r - RWJ</title>
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+	<style scoped>  /*  www.w3schools.com/cssref/css_colornames.asp  www.tizag.com/cssT/border.php */
+				//body {max-width: 95%; font-size: 100%; line-height: 100%;}
+				div.Gallery {background-color:rgb(255,248,248); }	
+				div.TOC {background-color:rgb(248,248,255); }	
+				div.main, .r {font-family: monospace; white-space: pre; max-width: 1000px}
+				//p{margin-bottom:2%; margin-top:2%;margin-before: 2%; margin-after: 2%;}
+				code {border: 0px}
+				pre  {border: 1px solid}
+				
+				.D1, .D2, .D3, .D4, .D5  {background-color:rgba(255,240,240, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} /*div {; opacity: 0.3; background-color:GhostWhite; border-left-style:ridge;}  */
+				// code, pre  {background-color:rgba(240,240,255, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} 
+				div.D5 {font-size:8px;} 
+				//.sq {font-size:12px; font-family: Arial; color:DodgerBlue } 
+				center, .capt {font-size:12px; font-weight:bold; font-family: Arial; margin:auto; text-align:center;}
+				.captTOC {font-size:100%; font-weight:bold; font-family: Arial; align:left}
+				H1,  H2,  H3,  H4,  H5 {color:blue; font-family: Arial; color:teal;}
+				.H1, .H2, .H3, .H4, .H5 {color:teal; font-family: Arial; font-weight:bold;  display:inline-block; display:-moz-inline-box;}
+				H1, .H1 {font-size:300%;  margin-top:36px;  margin-bottom:8px;  margin-left:0px; } 
+				H2, .H2 {font-size:250%;  margin-top:28px;  margin-bottom:5px;  margin-left:20px;} 
+				.TOC.H1, H3, .H3 {font-size:200%;  margin-top:15px;  margin-bottom:3px;  margin-left:40px;}
+				.TOC.H2, H4, .H4 {font-size:150%;  margin-top:12px;  margin-bottom:2px;  margin-left:60px;}
+				.TOC.H3, H5, .H5 {font-size:120%;  margin-top:10px;  margin-bottom:1px;  margin-left:80px;}
+				.TOC.H4, H6, .H6 {font-size:105%;  margin-top:7px;  margin-bottom:1px;  margin-left:100px;}
+				img.fig, .captTOC, img.tnTOC {margin-top:0px;   margin-bottom:0px;  margin-left:10px;} 
+				.TOC.H1, .TOC.H2, .TOC.H3, .TOC.H4, .TOC.H5, span.captTOC, img.tnTOC { display:block;}
+				.D77 { display:inline; }
+				img, .aD, iframe {border-style:none; border:0}
+				/* .dimg{height:90px;  display:inline-block;} /* position:fixed;  position:absolute;*/ 
+				.imgGal{margin-top:1px;   margin-bottom:1px;  margin-left:1px; height:100px} /*height:100%; max-width:100%; max-height:100%; }/* position:absolute; fixed;*/ 
+				
+				.fun {color:indigo; font-weight:bold;}
+				.comment {color:green; align:left}
+				.comment2 {color: rgb(100,200,100); font-size:3px; -webkit-text-size-adjust: none;}
+				.text, .sq {color: teal; font-size:12px;}
+				</style>
+				
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+	<style scoped>  /*  www.w3schools.com/cssref/css_colornames.asp  www.tizag.com/cssT/border.php */
+				//body {max-width: 95%; font-size: 100%; line-height: 100%;}
+				div.Gallery {background-color:rgb(255,248,248); }	
+				div.TOC {background-color:rgb(248,248,255); }	
+				div.main, .r {font-family: monospace; white-space: pre; max-width: 1000px}
+				//p{margin-bottom:2%; margin-top:2%;margin-before: 2%; margin-after: 2%;}
+				code {border: 0px}
+				pre  {border: 1px solid}
+				
+				.D1, .D2, .D3, .D4, .D5  {background-color:rgba(255,240,240, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} /*div {; opacity: 0.3; background-color:GhostWhite; border-left-style:ridge;}  */
+				// code, pre  {background-color:rgba(240,240,255, .2); border-style:ridge; margin:5px; padding:15px;-moz-border-radius:5px; border-radius:5px} 
+				div.D5 {font-size:8px;} 
+				//.sq {font-size:12px; font-family: Arial; color:DodgerBlue } 
+				center, .capt {font-size:12px; font-weight:bold; font-family: Arial; margin:auto; text-align:center;}
+				.captTOC {font-size:100%; font-weight:bold; font-family: Arial; align:left}
+				H1,  H2,  H3,  H4,  H5 {color:blue; font-family: Arial; color:teal;}
+				.H1, .H2, .H3, .H4, .H5 {color:teal; font-family: Arial; font-weight:bold;  display:inline-block; display:-moz-inline-box;}
+				H1, .H1 {font-size:300%;  margin-top:36px;  margin-bottom:8px;  margin-left:0px; } 
+				H2, .H2 {font-size:250%;  margin-top:28px;  margin-bottom:5px;  margin-left:20px;} 
+				.TOC.H1, H3, .H3 {font-size:200%;  margin-top:15px;  margin-bottom:3px;  margin-left:40px;}
+				.TOC.H2, H4, .H4 {font-size:150%;  margin-top:12px;  margin-bottom:2px;  margin-left:60px;}
+				.TOC.H3, H5, .H5 {font-size:120%;  margin-top:10px;  margin-bottom:1px;  margin-left:80px;}
+				.TOC.H4, H6, .H6 {font-size:105%;  margin-top:7px;  margin-bottom:1px;  margin-left:100px;}
+				img.fig, .captTOC, img.tnTOC {margin-top:0px;   margin-bottom:0px;  margin-left:10px;} 
+				.TOC.H1, .TOC.H2, .TOC.H3, .TOC.H4, .TOC.H5, span.captTOC, img.tnTOC { display:block;}
+				.D77 { display:inline; }
+				img, .aD, iframe {border-style:none; border:0}
+				/* .dimg{height:90px;  display:inline-block;} /* position:fixed;  position:absolute;*/ 
+				.imgGal{margin-top:1px;   margin-bottom:1px;  margin-left:1px; height:100px} /*height:100%; max-width:100%; max-height:100%; }/* position:absolute; fixed;*/ 
+				
+				.fun {color:indigo; font-weight:bold;}
+				.comment {color:green; align:left}
+				.comment2 {color: rgb(100,200,100); font-size:3px; -webkit-text-size-adjust: none;}
+				.text, .sq {color: teal; font-size:12px;}
+				</style>
+				
+<style scoped>  /*  www.w3schools.com/cssref/css_colornames.asp  www.tizag.com/cssT/border.php */
+				.TOC.fig, .imgGal{margin-top:1px;   margin-bottom:1px;  margin-left:1px; height:130px}
+				.TOC.H1, .TOC.H2, .TOC.H3 {display:block}
+				</style> <!-- ================================================================== -->
+# <a href="#" id= "aToggleAll">Fold</a> All |
+				<a href="#" class= "aToggleAllFig">Toggle</a> all figs | 
+				<a href="#" class= "aToggle Gallery">Fold</a> Gallery |
+				<a href="#" class= "aToggle TOContents">Fold</a> TOC |
+				<a href="#" class= "aToggle DD2">Fold</a> H2 |
+				<a href="#" class= "aToggle DD3">Fold</a> H3 |
+				<a href="#" class= "aToggle DD4">Fold</a> H4 |
+				<a href="#" class= "aToggleComments">Toggle</a> Comments |
+				<a href="javascript:linutoggle()" >Toggle</a> Line Numbers <span id="out"></span></br>
+<div class="Gallery"> <H3>Gallery for  
+M:\50_HLP\out\demo_HLP\demo_HLP.r
+ </H3>
+<img id="tnfig202" class="imgGal" src="img/Fig_1.png"
+								 height=140 alt="Fig_1. Noisy x^2"/>
+<img id="tnfig229" class="imgGal" src="img/Fig_2.png"
+								 height=140 alt="Fig_2. Noisy  $ -x^2 $ "/>
+<img id="tnfig240" class="imgGal" src="img/Fig_3.png"
+								 height=140 alt="Fig_3. qqplot: Noisy  $ - x^2 $ "/>
+<img id="tnfig280" class="imgGal" src="img/Fig_4.png"
+								 height=140 alt="Fig_4. Pairs xyy"/>
+<iframe id="fig359" class="imgGal" src="img/jFig_1.htm" width=300 height=140 style="-ms-zoom: 0.25" name="jFig_1. rCharts xyy, by group"></iframe>
+<iframe id="fig371" class="imgGal" src="img/jFig_2.htm" width=300 height=140 style="-ms-zoom: 0.25" name="jFig_2. gvisMap, Medio"></iframe>
+
+
+<hr/></div> <div class="TOContents" id="0"> <H2>Table of Contents</H2>
+<span class="TOC H2" id="TOC10" title="10">init</span>
+<span class="TOC H1" id="TOC60" title="60">  demo_HLP</span>
+<span class="TOC H3" id="TOC63" title="63">from init old</span>
+<span class="TOC H4" id="TOCmd136">rwj() = Code2HTML() Features:</span>
+<span class="TOC H4" id="TOCmd148">
+<span class="TOC H2" id="TOC160" title="160"> Block Header 2</span>
+<span class="TOC H3" id="TOC163" title="163">   Block Header 3</span>
+<span class="TOC H4" id="TOC164" title="164">looong calculation</span>
+<img id="TOCfig202" class="TOCfig" src="img/Fig_1.png"
+								 height=140 alt="Fig_1. Noisy x^2" title="Fig_1. Noisy x^2"/>
+<span class="TOC H4" id="TOC207" title="207"> &quot;roxigen&quot; type comments and TODO,  Header 4</span>
+<span class="TOC H3" id="TOC215" title="215">   Block Header 3 - 2 - inside function definition</span>
+<img id="TOCfig229" class="TOCfig" src="img/Fig_2.png"
+								 height=140 alt="Fig_2. Noisy  $ -x^2 $ " title="Fig_2. Noisy  $ -x^2 $ "/>
+<span class="TOC H3" id="TOC232" title="232"> ggplot,   Block Header 3</span>
+<img id="TOCfig240" class="TOCfig" src="img/Fig_3.png"
+								 height=140 alt="Fig_3. qqplot: Noisy  $ - x^2 $ " title="Fig_3. qqplot: Noisy  $ - x^2 $ "/>
+<img id="TOCfig280" class="TOCfig" src="img/Fig_4.png"
+								 height=140 alt="Fig_4. Pairs xyy" title="Fig_4. Pairs xyy"/>
+<span class="TOC H2" id="TOC287" title="287">Examples</span>
+<span class="TOC H3" id="TOC339" title="339"> rCharts</span>
+<span class="TOC H4" id="TOC343" title="343">Installation of rCharts</span>
+<iframe id="TOCfig359" class="jfig" src="img/jFig_1.htm" height=140 height=140 style="-ms-zoom: 0.25" title="jFig_1. rCharts xyy, by group"></iframe>
+<iframe id="TOCfig371" class="jfig" src="img/jFig_2.htm" height=140 height=140 style="-ms-zoom: 0.25" title="jFig_2. gvisMap, Medio"></iframe>
+<span class="TOC H2" id="TOC387" title="387">Misc   (cache, parking lot)</span>
+<hr/></div><br/>
+						<!-- pre --><div class="main">
+<pre><code class="r 1"><span id="sp1" class="linu" onclick="gotop()">1  </span>#! /usr/bin/Rscript --vanilla --slave
+<span id="sp2" class="linu" onclick="gotop()">2  </span># Project  : demo_HLP
+<span id="sp3" class="linu" onclick="gotop()">3  </span># File     : demo_HLP/demo_HLP.r
+<span id="sp4" class="linu" onclick="gotop()">4  </span># Author   : Alex Zolotoviski, azolotovitski\medio.com
+<span id="sp5" class="linu" onclick="gotop()">5  </span># Created  : 2014-04-25 12:10:35
+<span id="sp6" class="linu" onclick="gotop()">6  </span># License  : GPL-2
+<span id="sp7" class="linu" onclick="gotop()">7  </span># from D:\z\work\71_UseR-2013-Tutorial\UseR-2013-Tutorial-2\work\UseR-2013\97_tutorial-demo\97_tutorial-demo.r
+<span id="sp8" class="linu" onclick="gotop()">8  </span>###############################################################################
+
+<span id="sp10" class="linu" onclick="gotop()">10  </span>if(init&lt;- 1) {<span class="comment2"> #== </span><span class="H2" id="10" title="10">init</span> <span class="comment2"> ===</span> <a href="javascript:ToggleFold(10)" id="asp10"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D10">
+<span id="sp11" class="linu" onclick="gotop()">11  </span>    rm(list=ls(envir = .GlobalEnv), envir = .GlobalEnv)
+
+<span id="sp13" class="linu" onclick="gotop()">13  </span>    options(help=&#39;html&#39;, digits=4, width=3999, scipen=5, repos = c(CRAN= &quot;http://cran.rstudio.com&quot;)
+<span id="sp14" class="linu" onclick="gotop()">14  </span>            , error= NULL)<span class="comment"> # options(error= recover) options(error=dump)  #or options(error=NULL) getOption(&#39;width&#39;)</span>
+
+<span id="sp16" class="linu" onclick="gotop()">16  </span>    onWin= Sys.getenv(&#39;R_PLATFORM&#39;)==&#39;&#39;
+<span id="sp17" class="linu" onclick="gotop()">17  </span>    if(onWin){root= &#39;m:/50_HLP/out&#39;;    memory.limit(size=9000) <a href="javascript:ToggleFold(17)" id="asp17"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D17"><b>}</b></div>  else root= &#39;/home/azolotovitski/work&#39;  <span class="comment"> # memory.limit()</span>
+
+<span id="sp19" class="linu" onclick="gotop()">19  </span>    library(HaLaP)
+<span id="sp20" class="linu" onclick="gotop()">20  </span>    library(RWorkJournal)
+<span id="sp21" class="linu" onclick="gotop()">21  </span>    if(fromSrc &lt;- 0) source(&#39;m:/50_HLP/out/packages/HaLaP/inst/HLP.r&#39;)<span class="comment"> # T:/work/UseR-2013/lib/zBase0.r</span>
+<span id="sp22" class="linu" onclick="gotop()">22  </span>    if(fromSrc &lt;- 0) source(&#39;m:/50_HLP/out/packages/RWorkJournal/inst/RWorkJournal.r&#39;)<span class="comment"> # T:/work/UseR-2013/lib/zCode.r</span>
+
+<span id="sp24" class="linu" onclick="gotop()">24  </span>#   source(&#39;T:/work/UseR-2013/lib/zBase1.r&#39;)  
+<span id="sp25" class="linu" onclick="gotop()">25  </span>#   source(&#39;T:/work/UseR-2013/lib/zCode.r&#39;)  
+<span id="sp26" class="linu" onclick="gotop()">26  </span>#   source(&#39;T:/work/UseR-2013/lib/zStats.r&#39;)  
+<span id="sp27" class="linu" onclick="gotop()">27  </span>    source(&#39;m:/50_HLP/out/demo_HLP/demo_HLP.fun.r&#39;)  
+
+<span id="sp29" class="linu" onclick="gotop()">29  </span>   <span class="comment"> #install.packages(&#39;plyr&#39;)</span>
+<span id="sp30" class="linu" onclick="gotop()">30  </span>    libra(plyr) 
+<span id="sp31" class="linu" onclick="gotop()">31  </span>    libra(ggplot2) 
+
+<span id="sp33" class="linu" onclick="gotop()">33  </span>    libra(data.table); dtt= data.table; ad= as.IDate; taa= tables  <span class="comment"> # vignette(&quot;datatable-faq&quot;)</span>
+
+
+<span id="sp36" class="linu" onclick="gotop()">36  </span>    libra(RColorBrewer) <span class="comment"> # display.brewer.all()</span>
+<span id="sp37" class="linu" onclick="gotop()">37  </span>    palette(c(adjustcolor(cn(&#39;grey50 green3 red2&#39;), alpha.f = .6), brewer.pal(8,&quot;Dark2&quot;))) <span class="comment"> ##ex: plot(1:19, pch=16, col=1:19, cex=3)</span>
+
+
+<span id="sp40" class="linu" onclick="gotop()">40  </span>    proot= fp(root, &#39;demo_HLP&#39;) <span class="comment"> # project root</span>
+<span id="sp41" class="linu" onclick="gotop()">41  </span>    sw(fp(proot, &#39;out&#39;))
+
+<span id="sp43" class="linu" onclick="gotop()">43  </span>   <span class="comment"> #libra(Cairo);  </span>
+
+<span id="sp45" class="linu" onclick="gotop()">45  </span>    theFile= fp(proot, &#39;demo_HLP.r&#39;)
+<span id="sp46" class="linu" onclick="gotop()">46  </span>    options(theFile= theFile)
+<span id="sp47" class="linu" onclick="gotop()">47  </span>   <span class="comment"> # [1] &quot;m:/50_HLP/out/demo_HLP/demo_HLP.r&quot;</span>
+
+
+<span id="sp50" class="linu" onclick="gotop()">50  </span>    HHp.bak= HHp<span class="comment"> #; HHp=dummy; # HHp= HHp.bak   # to rerun w/o change images</span>
+<span id="sp51" class="linu" onclick="gotop()">51  </span>    sa.bak= sa  <span class="comment"> #; sa=dummy ; # sa= sa.bak   # to rerun w/o change images</span>
+
+
+<span id="sp54" class="linu" onclick="gotop()">54  </span>   <span class="comment"> # catf(&#39;\ndetach(&quot;%s&quot;,  character.only = TRUE)&#39;, grep(&#39;^pac&#39;, search(), v=T))</span>
+<span id="sp55" class="linu" onclick="gotop()">55  </span>   <span class="comment"> # gff(&#39;saved&#39;, theFile)</span>
+<span id="sp56" class="linu" onclick="gotop()">56  </span>   <span class="comment"> # rmDF(); loo(); lo(); lsDF();</span>
+<span id="sp57" class="linu" onclick="gotop()">57  </span><b>}</b></div> <span class="comment2">#--</span>
+<span id="sp58" class="linu" onclick="gotop()">58  </span>##########################################################
+
+<span id="sp60" class="linu" onclick="gotop()">60  </span>## <span class="H1" id="60" title="60">  demo_HLP  </span> <span class="comment2"></span>
+
+
+<span id="sp63" class="linu" onclick="gotop()">63  </span>    if(0){<span class="comment"> #### <span class="H3" id="63" title="63">from init old </span></span> <span class="comment2"></span> <a href="javascript:ToggleFold(63)" id="asp63"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D63">
+
+<span id="sp65" class="linu" onclick="gotop()">65  </span>        if(fromSrc &lt;- 1){ <a href="javascript:ToggleFold(65)" id="asp65"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D65">
+<span id="sp66" class="linu" onclick="gotop()">66  </span>           <span class="comment"> #source(file.path(root, &#39;lib/zBase0.r&#39;))  </span>
+<span id="sp67" class="linu" onclick="gotop()">67  </span>            source(&#39;T:/work/UseR-2013/lib/zBase0.r&#39;) <span class="comment"> # <font color="red">xxx: hard coded path to zBase.r</font></span>
+<span id="sp68" class="linu" onclick="gotop()">68  </span>            source(&#39;T:/work/UseR-2013/lib/zCode.r&#39;)  
+<span id="sp69" class="linu" onclick="gotop()">69  </span>           <span class="comment"> #source(&#39;T:/work/UseR-2013/lib/zBase1.r&#39;)  </span>
+<span id="sp70" class="linu" onclick="gotop()">70  </span>           <span class="comment"> #source(&#39;T:/work/UseR-2013/lib/zStats.r&#39;)  </span>
+<span id="sp71" class="linu" onclick="gotop()">71  </span>        } else {
+<span id="sp72" class="linu" onclick="gotop()">72  </span>            library(zBase0)
+<span id="sp73" class="linu" onclick="gotop()">73  </span>            libra(zCode)
+<span id="sp74" class="linu" onclick="gotop()">74  </span>            &#39;%+%&#39; = function(x, y) paste(x, y, sep= &quot;&quot;)
+<span id="sp75" class="linu" onclick="gotop()">75  </span>        <b>}</b></div>
+
+
+<span id="sp78" class="linu" onclick="gotop()">78  </span>        if(toSavePicsAndOutFiles &lt;- 1){ <a href="javascript:ToggleFold(78)" id="asp78"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D78">
+<span id="sp79" class="linu" onclick="gotop()">79  </span>            sg= sg.bak      
+<span id="sp80" class="linu" onclick="gotop()">80  </span>            sgj= sgj.bak    
+<span id="sp81" class="linu" onclick="gotop()">81  </span>            sa= sa.bak      
+<span id="sp82" class="linu" onclick="gotop()">82  </span>        <b>}</b></div>
+<span id="sp83" class="linu" onclick="gotop()">83  </span>    <b>}</b></div> <span class="comment2">#--</span>
+<span id="sp84" class="linu" onclick="gotop()">84  </span>   <span class="comment"> ##########################################################</span>
+
+
+
+<span id="sp88" class="linu" onclick="gotop()">88  </span>    if(0){ <a href="javascript:ToggleFold(88)" id="asp88"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D88">
+<span id="sp89" class="linu" onclick="gotop()">89  </span>       <span class="comment"> #&#39;  ===  Key points and helpers  ===</span>
+
+<span id="sp91" class="linu" onclick="gotop()">91  </span>       <span class="comment"> #&#39;  == Create Project       #  Wrapper for     </span>
+<span id="sp92" class="linu" onclick="gotop()">92  </span>        CreateProject()     <span class="comment"> #  Create new Project</span>
+<span id="sp93" class="linu" onclick="gotop()">93  </span>        libra()             <span class="comment"> #  install.packages + library()</span>
+<span id="sp94" class="linu" onclick="gotop()">94  </span>        theFile             <span class="comment"> #  global variable - current R code</span>
+
+<span id="sp96" class="linu" onclick="gotop()">96  </span>       <span class="comment"> #&#39;  == Remind objects:         </span>
+<span id="sp97" class="linu" onclick="gotop()">97  </span>        DT()                <span class="comment"> #  strftime(Sys.time()) - current Date and Time</span>
+<span id="sp98" class="linu" onclick="gotop()">98  </span>        st({})              <span class="comment"> #  system.time + play sound - for long executed blocks</span>
+<span id="sp99" class="linu" onclick="gotop()">99  </span>        hee()               <span class="comment"> #  nrow + head</span>
+<span id="sp100" class="linu" onclick="gotop()">100  </span>        sg()                <span class="comment"> #  dev.print  -  save graphics to .png file</span>
+<span id="sp101" class="linu" onclick="gotop()">101  </span>        srm()               <span class="comment"> #  save &amp; remove</span>
+<span id="sp102" class="linu" onclick="gotop()">102  </span>       <span class="comment"> # ^RV                #  copy output from console to the code</span>
+
+<span id="sp104" class="linu" onclick="gotop()">104  </span>       <span class="comment"> #&#39;  == Save state:             </span>
+<span id="sp105" class="linu" onclick="gotop()">105  </span>        sa()                <span class="comment"> #  save.image</span>
+<span id="sp106" class="linu" onclick="gotop()">106  </span>        Code2HTML()         <span class="comment"> #  R code theFile to html R Work Journal</span>
+<span id="sp107" class="linu" onclick="gotop()">107  </span>        MakeRWJournals()    <span class="comment"> #     - the same for many R files to create</span>
+<span id="sp108" class="linu" onclick="gotop()">108  </span>        createRWJalbum()    <span class="comment"> #       albums of galleries    </span>
+<span id="sp109" class="linu" onclick="gotop()">109  </span>        ReleaseOut()        <span class="comment"> #  move all output to a DateTime-version folder before new data</span>
+<span id="sp110" class="linu" onclick="gotop()">110  </span>       <span class="comment"> #&#39;       ///                #  exit location -  mark place in the file </span>
+
+<span id="sp112" class="linu" onclick="gotop()">112  </span>       <span class="comment"> #&#39;  == Restore  state:</span>
+<span id="sp113" class="linu" onclick="gotop()">113  </span>        rmall()             <span class="comment"> #  rm all</span>
+<span id="sp114" class="linu" onclick="gotop()">114  </span>        rmDF()              <span class="comment"> #  rm datafames and lists</span>
+<span id="sp115" class="linu" onclick="gotop()">115  </span>        init                <span class="comment"> #  initialise environment</span>
+<span id="sp116" class="linu" onclick="gotop()">116  </span>        loo(); gff(&#39;saved:&#39;)<span class="comment"> #  find saved data</span>
+<span id="sp117" class="linu" onclick="gotop()">117  </span>        lo()                <span class="comment"> #  load saved data</span>
+<span id="sp118" class="linu" onclick="gotop()">118  </span>        lsDF()              <span class="comment"> #  ls  data frames</span>
+
+<span id="sp120" class="linu" onclick="gotop()">120  </span>       <span class="comment"> #&#39;     Convenience, aliases #  Wrapper for    </span>
+<span id="sp121" class="linu" onclick="gotop()">121  </span>        tocsv()             <span class="comment"> #  write.csv </span>
+<span id="sp122" class="linu" onclick="gotop()">122  </span>        totsv()             <span class="comment"> #  write.table</span>
+<span id="sp123" class="linu" onclick="gotop()">123  </span>        suss()              <span class="comment"> #  subset + grep</span>
+<span id="sp124" class="linu" onclick="gotop()">124  </span>        gre2()              <span class="comment"> #  grep</span>
+<span id="sp125" class="linu" onclick="gotop()">125  </span>        df()                <span class="comment"> #  data.frame</span>
+<span id="sp126" class="linu" onclick="gotop()">126  </span>        aaa()               <span class="comment"> # cat(&#39;\a&#39;) - to play sound in the end of long run.</span>
+
+<span id="sp128" class="linu" onclick="gotop()">128  </span>       <span class="comment"> #&#39;  == Code in top and bottom of the R file.  - &quot;cache&quot;, &quot;parking lot&quot;</span>
+<span id="sp129" class="linu" onclick="gotop()">129  </span>    <b>}</b></div>
+
+
+</code></pre>
+
+<p>&#39;   </p>
+
+<span class="H4" id="md136">rwj() = Code2HTML() Features:</span>
+
+<ol>
+<li>Transforms .R file into  self-documented  .html file, containing all R code with output pics, headers and table of contents.</li>
+<li>The titles in body and contents are clickable to navigate from contents to body and back.</li>
+<li>The pics are clickable to resize.</li>
+<li>The html file has partly R syntax highlighted.  It is possible to do the full R syntax highlighting in resulting html, but the result file becomes almost twice heavier.</li>
+<li>Parts of the result html file could be folded.</li>
+<li>If you in browser fold TOC, select all, copy and paste to a text editor,  you should get the pure original R file.</li>
+<li>If you in browser select all, copy and paste to a MS Word, pics are resizable.</li>
+</ol>
+
+<span class="H4" id="md148"><a href="http://download.eclipse.org/eclipse/downloads">Eclipse</a> + StatET vs RStudio</span>
+
+<p>Pro:</p>
+
+<ul>
+<li> Full screen view on click</li>
+<li> Multi-win, monitors</li>
+<li> Copy from console to edit Ctrl+R,V</li>
+<li> Rectangular selection Alt-Shift+A</li>
+<li> Powerful Find and Search  Ctrl+H</li>
+<li> Also py, java, html, pig, hive, svn, git, shell, ... editors - hundreds plugins (menu Help-Marketplace...)</li>
+</ul>
+
+<p>Con:</p>
+
+<ul>
+<li><p><a href="http://www.splusbook.com/RIntro/R_Eclipse_StatET.pdf">installation and configuration</a> takes about 20 min.</p>
+
+<p>To get barebone Eclipse, go to <a href="http://download.eclipse.org/eclipse/downloads">the link</a> an then download the latest &quot;Platform Runtime Binery&quot;
+&#39;</p></li>
+</ul>
+
+<pre><code class="r 156">
+
+
+<span id="sp160" class="linu" onclick="gotop()">160  </span>    {<span class="comment"> ### <span class="H2" id="160" title="160"> Block Header 2 </span> <span class="comment2"> === 2013-07-03 12:18:09</span></span> <a href="javascript:ToggleFold(160)" id="asp160"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D160">
+
+
+<span id="sp163" class="linu" onclick="gotop()">163  </span>        {<span class="comment"> #### <span class="H3" id="163" title="163">   Block Header 3 </span> <span class="comment2"> ==  DT()  2013-06-24 13:46</span></span> <a href="javascript:ToggleFold(163)" id="asp163"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D163">
+<span id="sp164" class="linu" onclick="gotop()">164  </span>            st({ <span class="comment"> ##### <span class="H4" id="164" title="164">looong calculation</span></span> <span class="comment2"></span> <a href="javascript:ToggleFold(164)" id="asp164"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D164">
+<span id="sp165" class="linu" onclick="gotop()">165  </span>                        for(i in 1e2 ){  <span class="comment"> # 1:5e4</span> <a href="javascript:ToggleFold(165)" id="asp165"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D165">
+<span id="sp166" class="linu" onclick="gotop()">166  </span>                            x= 1:1000 / 100
+<span id="sp167" class="linu" onclick="gotop()">167  </span>                            y= x^2 + rnorm(le(x),, 9)
+<span id="sp168" class="linu" onclick="gotop()">168  </span>                        <b>}</b></div>
+<span id="sp169" class="linu" onclick="gotop()">169  </span>            <b>}</b></div>)<span class="comment"> #   5.05</span>
+
+<span id="sp171" class="linu" onclick="gotop()">171  </span>           <span class="comment"> # to data.table:</span>
+<span id="sp172" class="linu" onclick="gotop()">172  </span>            xy= dtt(x, y)
+
+<span id="sp174" class="linu" onclick="gotop()">174  </span>            hee(xy)
+<span id="sp175" class="linu" onclick="gotop()">175  </span>           <span class="comment"> # 1000  rows</span>
+<span id="sp176" class="linu" onclick="gotop()">176  </span>           <span class="comment"> #      x       y</span>
+<span id="sp177" class="linu" onclick="gotop()">177  </span>           <span class="comment"> # 1 0.01  11.169</span>
+<span id="sp178" class="linu" onclick="gotop()">178  </span>           <span class="comment"> # 2 0.02   6.532</span>
+<span id="sp179" class="linu" onclick="gotop()">179  </span>           <span class="comment"> # 3 0.03  13.510</span>
+<span id="sp180" class="linu" onclick="gotop()">180  </span>           <span class="comment"> # 4 0.04   2.896</span>
+<span id="sp181" class="linu" onclick="gotop()">181  </span>           <span class="comment"> # 5 0.05  -9.863</span>
+<span id="sp182" class="linu" onclick="gotop()">182  </span>           <span class="comment"> # 6 0.06 -15.041</span>
+<span id="sp183" class="linu" onclick="gotop()">183  </span>           <span class="comment"> # 7 0.07   6.389</span>
+<span id="sp184" class="linu" onclick="gotop()">184  </span>           <span class="comment"> # 8 0.08  17.035</span>
+<span id="sp185" class="linu" onclick="gotop()">185  </span>           <span class="comment"> # 9 0.09  19.776</span>
+<span id="sp186" class="linu" onclick="gotop()">186  </span>           <span class="comment"> # # he(suss(,, df(x, y), , sel= cn(&quot;x y&quot;)), 5)</span>
+</code></pre>
+
+<pre><code>    &#39;
+    save result of long calculations, print reminder to load:&#39;
+</code></pre>
+
+<pre><code class="r 188"><span id="sp189" class="linu" onclick="gotop()">189  </span>        saa(xy)
+<span id="sp190" class="linu" onclick="gotop()">190  </span>       <span class="comment"> # 2014-07-06 00:48:51::  xy  saved: lo(&#39;m:/50_HLP/out/demo_HLP/out/xy.RData&#39;); sw(&#39;m:/50_HLP/out/demo_HLP/out&#39;)</span>
+
+
+
+</code></pre>
+
+<pre><code>        &#39;
+       <span class="comment"> #### standard plot:&#39;</span>
+</code></pre>
+
+<pre><code class="r 195">
+<span id="sp197" class="linu" onclick="gotop()">197  </span>            ww() <span class="comment"> # open plot window</span>
+<span id="sp198" class="linu" onclick="gotop()">198  </span>            plot(x, y, ma= expression(Noisy ~ x^2  ~&#39;, &#39; ~ sigma ~ &#39;= 9&#39;))
+<span id="sp199" class="linu" onclick="gotop()">199  </span>            lines(lowess(y ~ x), lty=3, lwd=4, col=3)
+<span id="sp200" class="linu" onclick="gotop()">200  </span>           <span class="comment"> # save graph and print reminder - caption:</span>
+<span id="sp201" class="linu" onclick="gotop()">201  </span>            sg(&#39;Noisy x^2&#39;)
+<br/></code><code class="r"><img id="fig202" class="fig" src="img/Fig_1.png"
+								 width=700 alt="Fig_1. Noisy x^2"/>   
+						<br/><span class="capt">Fig_1. Noisy x^2</span><br/></span>
+
+
+<span id="sp205" class="linu" onclick="gotop()">205  </span>           <span class="comment"> # xFig_3. Noisy x^2   # redundant fig -  mark with break pattern &#39;# Fig_&#39;</span>
+
+<span id="sp207" class="linu" onclick="gotop()">207  </span>           <span class="comment"> ##### <span class="H4" id="207" title="207"> &quot;roxigen&quot; type comments and TODO,  Header 4 </span> <span class="comment2"> =</span></span>
+<span id="sp208" class="linu" onclick="gotop()">208  </span>           <span class="comment"> #&#39; Some commenting text after &quot;roxigen&quot; type comments</span>
+<span id="sp209" class="linu" onclick="gotop()">209  </span>           <span class="comment"> #&#39; can be here</span>
+<span id="sp210" class="linu" onclick="gotop()">210  </span>           <span class="comment"> #&#39; <font color="red">xxx: We need To Do something - include funcs from zBase.r; wrong borders of block 3</font></span>
+<span id="sp211" class="linu" onclick="gotop()">211  </span>           <span class="comment"> #&#39; <font color="red">TODO: something else - demo for hee(), sa(), lo(), lsDF()</font></span>
+<span id="sp212" class="linu" onclick="gotop()">212  </span>        <b>}</b></div> <span class="comment2">#--</span>
+
+
+<span id="sp215" class="linu" onclick="gotop()">215  </span>        plot2= function(){<span class="comment"> #### <span class="H3" id="215" title="215">   Block Header 3 - 2 - inside function definition </span> <span class="comment2"> ================</span></span> <a href="javascript:ToggleFold(215)" id="asp215"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D215">
+<span id="sp216" class="linu" onclick="gotop()">216  </span>            group &lt;&lt;- sample(cn(&#39;A B&#39;), le(x), re=T)
+<span id="sp217" class="linu" onclick="gotop()">217  </span>            y2 &lt;&lt;- - x^2 + 20 * (group == &#39;B&#39;) + rnorm(le(x),, 5)
+<span id="sp218" class="linu" onclick="gotop()">218  </span>            y3 &lt;&lt;- x^2 * cos(x) + 10 * (group == &#39;B&#39;) + rnorm(le(x),, 5)
+
+<span id="sp220" class="linu" onclick="gotop()">220  </span>            ww()
+<span id="sp221" class="linu" onclick="gotop()">221  </span>           <span class="comment"> #plot(x, y2, ma=&#39;Noisy -x^2&#39;, col= 1+ nuf(group), pch=20)</span>
+<span id="sp222" class="linu" onclick="gotop()">222  </span>            plot(x, y3, ma=&#39;Noisy x^2 * cos(x)&#39;, col= 1+ nuf(group), pch=20)
+<span id="sp223" class="linu" onclick="gotop()">223  </span>            lines(lowess(y2 ~ x), lty=2, lwd=4, col=6)
+<span id="sp224" class="linu" onclick="gotop()">224  </span>            lines(lowess(y3 ~ x), lty=2, lwd=4, col=7)
+<span id="sp225" class="linu" onclick="gotop()">225  </span>        <b>}</b></div> <span class="comment2">#--</span>
+<span id="sp226" class="linu" onclick="gotop()">226  </span>        plot2()
+
+<span id="sp228" class="linu" onclick="gotop()">228  </span>        sg(&#39;Noisy  $ -x^2 $ &#39;,, F)
+<br/></code><code class="r"><img id="fig229" class="fig" src="img/Fig_2.png"
+								 width=700 alt="Fig_2. Noisy  $ -x^2 $ "/>   
+						<br/><span class="capt">Fig_2. Noisy  $ -x^2 $ </span><br/></span>
+
+
+<span id="sp232" class="linu" onclick="gotop()">232  </span>        {<span class="comment"> #### <span class="H3" id="232" title="232"> ggplot,   Block Header 3</span> <span class="comment2"> ==</span></span> <a href="javascript:ToggleFold(232)" id="asp232"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D232">
+<span id="sp233" class="linu" onclick="gotop()">233  </span>            ww()
+<span id="sp234" class="linu" onclick="gotop()">234  </span>            str(x)
+<span id="sp235" class="linu" onclick="gotop()">235  </span>            str(y2)
+<span id="sp236" class="linu" onclick="gotop()">236  </span>            str(group)
+<span id="sp237" class="linu" onclick="gotop()">237  </span>            qplot(x, y2, col= fa(group), main=&#39;Noisy -x^2&#39;, geom=cn(&#39;point smooth&#39;))
+<span id="sp238" class="linu" onclick="gotop()">238  </span>           <span class="comment"> #  ggplot(df(x, y2), aes(x = x, y = y2)) +  geom_point()</span>
+<span id="sp239" class="linu" onclick="gotop()">239  </span>            sg(&#39;ggplot: Noisy  $ x^2 $ &#39;, gg=T)
+<br/></code><code class="r"><img id="fig240" class="fig" src="img/Fig_3.png"
+								 width=700 alt="Fig_3. qqplot: Noisy  $ - x^2 $ "/>   
+						<br/><span class="capt">Fig_3. qqplot: Noisy  $ - x^2 $ </span><br/></span>
+
+<span id="sp242" class="linu" onclick="gotop()">242  </span>           <span class="comment"> # xFig_2. qqplot: Noisy - x^2</span>
+<span id="sp243" class="linu" onclick="gotop()">243  </span>        <b>}</b></div> <span class="comment2">#--</span>
+
+<span id="sp245" class="linu" onclick="gotop()">245  </span>        sa()
+<span id="sp246" class="linu" onclick="gotop()">246  </span>       <span class="comment"> # 2013-07-09 17:21:31:: Image saved: lo(&#39;T:/work/UseR-2013/97_tutorial-demo/out/.RData&#39;); sw(&#39;T:/work/UseR-2013/97_tutorial-demo/out&#39;)  # rmDF(); lsDF(); dir(); expl()</span>
+
+<span id="sp248" class="linu" onclick="gotop()">248  </span>        cc()    
+
+<span id="sp250" class="linu" onclick="gotop()">250  </span>       <span class="comment"> #  now we can leave the project ----</span>
+
+
+<span id="sp253" class="linu" onclick="gotop()">253  </span>        xyy= df(x, y1= y, y2, group)
+<span id="sp254" class="linu" onclick="gotop()">254  </span>        hee(xyy)
+<span id="sp255" class="linu" onclick="gotop()">255  </span>       <span class="comment"> # 1000  rows</span>
+<span id="sp256" class="linu" onclick="gotop()">256  </span>       <span class="comment"> #      x       y1     y2 group</span>
+<span id="sp257" class="linu" onclick="gotop()">257  </span>       <span class="comment"> # 1 0.01 -11.4887 18.773     B</span>
+<span id="sp258" class="linu" onclick="gotop()">258  </span>       <span class="comment"> # 2 0.02   5.1757 14.175     B</span>
+<span id="sp259" class="linu" onclick="gotop()">259  </span>       <span class="comment"> # 3 0.03  16.3396 -1.341     A</span>
+<span id="sp260" class="linu" onclick="gotop()">260  </span>       <span class="comment"> # 4 0.04  -0.5679 15.992     B</span>
+<span id="sp261" class="linu" onclick="gotop()">261  </span>       <span class="comment"> # # he(suss(,, xyy, , sel= cn(&quot;x y1 y2 group&quot;)), 5)</span>
+
+
+
+<span id="sp265" class="linu" onclick="gotop()">265  </span>        hee(suss(&#39;y&#39;,, xyy, y1 &gt; 5, sel= cn(&quot;x y1 y2 group&quot;)), 5)
+<span id="sp266" class="linu" onclick="gotop()">266  </span>       <span class="comment"> # 789  rows</span>
+<span id="sp267" class="linu" onclick="gotop()">267  </span>       <span class="comment"> #        y1     y2</span>
+<span id="sp268" class="linu" onclick="gotop()">268  </span>       <span class="comment"> # 2   5.176 14.175</span>
+<span id="sp269" class="linu" onclick="gotop()">269  </span>       <span class="comment"> # 3  16.340 -1.341</span>
+<span id="sp270" class="linu" onclick="gotop()">270  </span>       <span class="comment"> # 5  11.656 18.788</span>
+<span id="sp271" class="linu" onclick="gotop()">271  </span>       <span class="comment"> # 7   9.583  6.824</span>
+<span id="sp272" class="linu" onclick="gotop()">272  </span>       <span class="comment"> # 11  5.882 19.659</span>
+<span id="sp273" class="linu" onclick="gotop()">273  </span>       <span class="comment"> # # he(suss(,, suss(&quot;y&quot;, , xyy, y1 &gt; 5, sel = cn(&quot;x y1 y2 group&quot;)), , sel= cn(&quot;y1 y2&quot;)), 5)</span>
+
+
+<span id="sp276" class="linu" onclick="gotop()">276  </span>        ww()
+<span id="sp277" class="linu" onclick="gotop()">277  </span>        plot(xyy, col= 1+nu(xyy$group))
+<span id="sp278" class="linu" onclick="gotop()">278  </span>        mtext(&#39;Pairs&#39;,,3)
+<span id="sp279" class="linu" onclick="gotop()">279  </span>        sg(&#39;Pairs xyy&#39;)
+<br/></code><code class="r"><img id="fig280" class="fig" src="img/Fig_4.png"
+								 width=700 alt="Fig_4. Pairs xyy"/>   
+						<br/><span class="capt">Fig_4. Pairs xyy</span><br/></span>
+
+
+<span id="sp283" class="linu" onclick="gotop()">283  </span>        sa(&#39;.with_xyy&#39;) <span class="comment"> #  xyy is large and rare used</span>
+<span id="sp284" class="linu" onclick="gotop()">284  </span>       <span class="comment"> # 2013-07-09 17:31:02:: Image saved: lo(&#39;T:/work/UseR-2013/97_tutorial-demo/out/.with_xyy.RData&#39;); sw(&#39;T:/work/UseR-2013/97_tutorial-demo/out&#39;)  # rmDF(); lsDF(); dir(); expl()</span>
+
+
+<span id="sp287" class="linu" onclick="gotop()">287  </span>        if (0) {<span class="comment2"> #==  </span><span class="H2" id="287" title="287">Examples </span> <span class="comment2"> ==</span> <a href="javascript:ToggleFold(287)" id="asp287"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D287">
+
+<span id="sp289" class="linu" onclick="gotop()">289  </span>            ca= cars
+<span id="sp290" class="linu" onclick="gotop()">290  </span>            co= CO2
+<span id="sp291" class="linu" onclick="gotop()">291  </span>            ir= iris
+<span id="sp292" class="linu" onclick="gotop()">292  </span>            ba= plyr::baseball
+
+<span id="sp294" class="linu" onclick="gotop()">294  </span>            lsDF(0)
+
+<span id="sp296" class="linu" onclick="gotop()">296  </span>           <span class="comment"> #&#39;     Convenience, aliases  #  Wrapper for    </span>
+<span id="sp297" class="linu" onclick="gotop()">297  </span>            tocsv(ca)              <span class="comment"> #  write.csv </span>
+<span id="sp298" class="linu" onclick="gotop()">298  </span>            totsv(co)              <span class="comment"> #  write.table</span>
+<span id="sp299" class="linu" onclick="gotop()">299  </span>            na(ir)                 <span class="comment"> #  names</span>
+<span id="sp300" class="linu" onclick="gotop()">300  </span>            nc(ir)                 <span class="comment"> #  paste names</span>
+<span id="sp301" class="linu" onclick="gotop()">301  </span>            suss(&#39;^S&#39;, &#39;W&#39;, ir, Sepal.Length &gt;5)<span class="comment"> #  subset + grep(names())</span>
+<span id="sp302" class="linu" onclick="gotop()">302  </span>            hee(srt(suss(&#39;^S&#39;, &#39;W&#39;, ir, Sepal.Length &gt;5), ~- Sepal.Length))#  head + order + suss
+
+<span id="sp304" class="linu" onclick="gotop()">304  </span>            na(ba)                 <span class="comment"> #  names</span>
+<span id="sp305" class="linu" onclick="gotop()">305  </span>            hee(ba)
+<span id="sp306" class="linu" onclick="gotop()">306  </span>           <span class="comment"> # 21699  rows</span>
+<span id="sp307" class="linu" onclick="gotop()">307  </span>           <span class="comment"> #            id year stint team lg  g  ab  r  h X2b X3b hr rbi sb cs bb so ibb hbp sh sf gidp</span>
+<span id="sp308" class="linu" onclick="gotop()">308  </span>           <span class="comment"> # 4   ansonca01 1871     1  RC1    25 120 29 39  11   3  0  16  6  2  2  1  NA  NA NA NA   NA</span>
+<span id="sp309" class="linu" onclick="gotop()">309  </span>           <span class="comment"> # 44  forceda01 1871     1  WS3    32 162 45 45   9   4  0  29  8  0  4  0  NA  NA NA NA   NA</span>
+<span id="sp310" class="linu" onclick="gotop()">310  </span>           <span class="comment"> # 68  mathebo01 1871     1  FW1    19  89 15 24   3   1  0  10  2  1  2  0  NA  NA NA NA   NA</span>
+<span id="sp311" class="linu" onclick="gotop()">311  </span>           <span class="comment"> # # he(suss(,, ba, , sel= cn(&quot;id year stint team lg g ab r h X2b X3b hr rbi sb cs bb so ibb hbp sh sf gidp&quot;)), 5)</span>
+
+<span id="sp313" class="linu" onclick="gotop()">313  </span>            xx= ncc(&#39;id|g|b$&#39;, &#39;X&#39;, ba) <span class="comment"> # paste + gre + colnames </span>
+<span id="sp314" class="linu" onclick="gotop()">314  </span>           <span class="comment"> # [1] &quot;id lg g ab sb bb ibb gidp&quot;</span>
+
+<span id="sp316" class="linu" onclick="gotop()">316  </span>            cn(xx)                      <span class="comment"> # strsplit </span>
+<span id="sp317" class="linu" onclick="gotop()">317  </span>           <span class="comment"> # [1] &quot;id&quot;   &quot;lg&quot;   &quot;g&quot;    &quot;ab&quot;   &quot;sb&quot;   &quot;bb&quot;   &quot;ibb&quot;  &quot;gidp&quot;</span>
+
+
+
+<span id="sp321" class="linu" onclick="gotop()">321  </span>            hee(srt(suss(&#39;id|g|b$&#39;, &#39;X&#39;, ba, g &gt;160), ~id)) <span class="comment"> #  head + order + suss</span>
+<span id="sp322" class="linu" onclick="gotop()">322  </span>           <span class="comment"> # 220  rows</span>
+<span id="sp323" class="linu" onclick="gotop()">323  </span>           <span class="comment"> #              id lg   g  ab sb bb ibb gidp</span>
+<span id="sp324" class="linu" onclick="gotop()">324  </span>           <span class="comment"> # 43076 aaronha01 NL 161 631 31 78  18   11</span>
+<span id="sp325" class="linu" onclick="gotop()">325  </span>           <span class="comment"> # 43826 allendi01 NL 162 632  3 67  13    8</span>
+<span id="sp326" class="linu" onclick="gotop()">326  </span>           <span class="comment"> # 44582 allendi01 NL 161 619 15 74   6   13</span>
+<span id="sp327" class="linu" onclick="gotop()">327  </span>           <span class="comment"> # 68530 alomaro01 AL 161 637 53 57   3    5</span>
+<span id="sp328" class="linu" onclick="gotop()">328  </span>           <span class="comment"> # 48170 alomasa01 AL 162 672 35 49   2    7</span>
+<span id="sp329" class="linu" onclick="gotop()">329  </span>           <span class="comment"> # 49084 alomasa01 AL 162 689 39 41   4    7</span>
+<span id="sp330" class="linu" onclick="gotop()">330  </span>           <span class="comment"> # 47712  alouma01 NL 162 698 22 42   9    5</span>
+<span id="sp331" class="linu" onclick="gotop()">331  </span>           <span class="comment"> # 69623 baergca01 AL 161 657 10 35  10   15</span>
+<span id="sp332" class="linu" onclick="gotop()">332  </span>           <span class="comment"> # 70191 bagweje01 NL 162 586 10 84  13   17</span>
+<span id="sp333" class="linu" onclick="gotop()">333  </span>           <span class="comment"> # # he(suss(,, srt(suss(&quot;id|g|b$&quot;, &quot;X&quot;, ba, g &gt; 160), ~id), , sel= cn(&quot;id lg g ab sb bb ibb gidp&quot;)), 5)</span>
+
+<span id="sp335" class="linu" onclick="gotop()">335  </span>            gre2()               <span class="comment"> #  grep</span>
+
+<span id="sp337" class="linu" onclick="gotop()">337  </span>        <b>}</b></div>
+
+<span id="sp339" class="linu" onclick="gotop()">339  </span>        if(0){<span class="comment"> #### <span class="H3" id="339" title="339"> rCharts  </span> <span class="comment2"> ==</span></span> <a href="javascript:ToggleFold(339)" id="asp339"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D339">
+</code></pre>
+
+<p>&#39;
+nice demo: <a href="http://rpubs.com/Abresler/rCharts_Test">http://rpubs.com/Abresler/rCharts_Test</a>
+&#39;</p>
+
+<pre><code class="r 342"><span id="sp343" class="linu" onclick="gotop()">343  </span>           <span class="comment"> ##### <span class="H4" id="343" title="343">Installation of rCharts</span> <span class="comment2"> ==</span></span>
+<span id="sp344" class="linu" onclick="gotop()">344  </span>            libra(devtools)
+<span id="sp345" class="linu" onclick="gotop()">345  </span>            install_github(&#39;ramnathv/rCharts&#39;) <span class="comment"> # nOK</span>
+
+<span id="sp347" class="linu" onclick="gotop()">347  </span>           <span class="comment"> # libra(RJSONIO)</span>
+<span id="sp348" class="linu" onclick="gotop()">348  </span>           <span class="comment"> # libra(yaml)</span>
+<span id="sp349" class="linu" onclick="gotop()">349  </span>           <span class="comment"> #  C:\&gt;z\eclipse\R-2.14.2\bin\x64\R.exe  --vanilla CMD INSTALL C:\Users\azolotovitski\Downloads\rCharts-master\rCharts-master</span>
+
+
+<span id="sp352" class="linu" onclick="gotop()">352  </span>            require(rCharts)
+<span id="sp353" class="linu" onclick="gotop()">353  </span>            p1 &lt;- hPlot(y2 ~ x,  size=&quot;x&quot;, group=&quot;group&quot;, data=xyy, type = &quot;line&quot;, dom=&#39;zzz&#39;, title = &quot;rChart&quot;, subtitle = &quot;xyy, by group&quot;) <span class="comment"> # http://www.polychartjs.com/demo?bubble_chart</span>
+<span id="sp354" class="linu" onclick="gotop()">354  </span>            p1$chart(zoomType = &quot;xy&quot;)
+<span id="sp355" class="linu" onclick="gotop()">355  </span>            p1$show()
+
+<span id="sp357" class="linu" onclick="gotop()">357  </span>           <span class="comment"> # save js-HTML graph and print reminder - caption:</span>
+<span id="sp358" class="linu" onclick="gotop()">358  </span>            sgj(, &quot;rCharts xyy, by group&quot;)
+<br/></code><code class="r"><iframe id="fig359" class="jfig" src="img/jFig_1.htm" width="100%"  height="600px" name="jFig_1. rCharts xyy, by group"></iframe>  
+						<br/><span class="capt">jFig_1. rCharts xyy, by group</span><br/></span>
+
+
+<span id="sp362" class="linu" onclick="gotop()">362  </span>            libra(googleVis)
+<span id="sp363" class="linu" onclick="gotop()">363  </span>            mmap &lt;- gvisMap(df(name=&#39;Medio/HERE&#39;, lalo=&#39;47.611446:-122.332749&#39;, alt=15)
+<span id="sp364" class="linu" onclick="gotop()">364  </span>                    , locationvar=&quot;lalo&quot;, tipvar =&quot;name&quot;, 
+<span id="sp365" class="linu" onclick="gotop()">365  </span>                    , options=list(dataMode=&quot;markers&quot;, useMapTypeControl=T, region=&#39;us_metro&#39;, zoomLevel=9, showTip=T))
+
+<span id="sp367" class="linu" onclick="gotop()">367  </span>           <span class="comment"> # plotting results into html file</span>
+<span id="sp368" class="linu" onclick="gotop()">368  </span>            plot(mmap)
+<span id="sp369" class="linu" onclick="gotop()">369  </span>            cat(mmap$html$chart, file=&quot;../img/jFig_2.htm&quot;)
+<span id="sp370" class="linu" onclick="gotop()">370  </span>           <span class="comment"> # sgj(, &quot;gvisMap, Medio&quot;) - nOK</span>
+<br/></code><code class="r"><iframe id="fig371" class="jfig" src="img/jFig_2.htm" width="100%"  height="600px" name="jFig_2. gvisMap, Medio"></iframe>  
+						<br/><span class="capt">jFig_2. gvisMap, Medio</span><br/></span>
+
+
+<span id="sp374" class="linu" onclick="gotop()">374  </span>        <b>}</b></div>
+
+<span id="sp376" class="linu" onclick="gotop()">376  </span>        cc()
+<span id="sp377" class="linu" onclick="gotop()">377  </span>        expl(&quot;file://T:/work/UseR-2013/97_tutorial-demo/97_tutorial-demo.r.htm&quot;)
+
+
+
+<span id="sp381" class="linu" onclick="gotop()">381  </span>    <b>}</b></div> <span class="comment2">#--</span>
+
+
+
+
+
+<span id="sp387" class="linu" onclick="gotop()">387  </span>    if(0){<span class="comment2">   #== </span><span class="H2" id="387" title="387">Misc   (cache, parking lot)</span> <span class="comment2"></span> <a href="javascript:ToggleFold(387)" id="asp387"><img src="" alt="-" class="fold" /></a>
+									<div class="D-fold" id="D387">
+<span id="sp388" class="linu" onclick="gotop()">388  </span>        theFile= &#39;T:/work/UseR-2013/97_tutorial-demo/97_tutorial-demo.r&#39;
+<span id="sp389" class="linu" onclick="gotop()">389  </span>        gff(&#39;saved&#39;, theFile)
+<span id="sp390" class="linu" onclick="gotop()">390  </span>        gff(&#39;sa\\(|===&#39;, theFile)
+
+<span id="sp392" class="linu" onclick="gotop()">392  </span>        theFile= fp(proot, &#39;demo_HLP.r&#39;)
+
+<span id="sp394" class="linu" onclick="gotop()">394  </span>        CreateNewProj(newProj.name= &#39;96_Alba&#39;
+<span id="sp395" class="linu" onclick="gotop()">395  </span>                , Templ.dir= &#39;T:/work/UseR-2013/lib/newProjTemplName&#39;
+<span id="sp396" class="linu" onclick="gotop()">396  </span>                , root=&#39;T:/work/UseR-2013&#39;)
+
+<span id="sp398" class="linu" onclick="gotop()">398  </span>        CreateNewProj(newProj.name= &#39;95_test_R2wd&#39;
+<span id="sp399" class="linu" onclick="gotop()">399  </span>                , Templ.dir= &#39;T:/work/UseR-2013/lib/newProjTemplName&#39;
+<span id="sp400" class="linu" onclick="gotop()">400  </span>                , root=&#39;T:/work/UseR-2013&#39;, R2wd=T)
+
+<span id="sp402" class="linu" onclick="gotop()">402  </span>        CreateNewProj(newProj.name= &#39;71_5min_R_Work_Journal&#39;
+<span id="sp403" class="linu" onclick="gotop()">403  </span>                , Templ.dir= &#39;T:/work/UseR-2013/lib/newProjTemplName&#39;
+<span id="sp404" class="linu" onclick="gotop()">404  </span>                , root=&#39;M:&#39;)
+
+<span id="sp406" class="linu" onclick="gotop()">406  </span>        cc()
+<span id="sp407" class="linu" onclick="gotop()">407  </span>        ReleaseOut(vers=&#39;.b&#39;, exec= T)
+<span id="sp408" class="linu" onclick="gotop()">408  </span>        ReleaseOut(vers=&#39;Alb&#39;, exec= T)
+
+<span id="sp410" class="linu" onclick="gotop()">410  </span>        source(theFile)
+<span id="sp411" class="linu" onclick="gotop()">411  </span>    <b>}</b></div> <span class="comment2">#--</span>
+
+
+</code></pre>
+
+</div><!-- /pre --><br>##   The HTML output of 
+M:\50_HLP\out\demo_HLP\demo_HLP.r
+ was created on 
+2014-07-06 22:39:08
+; <a href="http://www.mathjax.org/demos/scaling-math/">test MathJax </a>
+	<!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+				
+				<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+				
+				<script>
+				
+				var d= document;  
+				var imgFold= "<img src='data:image/jpeg;base64,R0lGODlhDQAMAJEAAAAAAP///2NlY////yH5BAEAAAMALAAAAAANAAwAAAIYnI+pK+2OBIvzSHWNfJtin2SDaEUctCwFADs=' alt='-'/>";
+				var srcMinus="data:image/jpeg;base64,R0lGODlhDQAMAJEAAAAAAP///2NlY////yH5BAEAAAMALAAAAAANAAwAAAIYnI+pK+2OBIvzSHWNfJtin2SDaEUctCwFADs=";
+				
+				$(document).ready(function(){
+				
+				
+				$(".fold").src= srcMinus;
+				
+				$(".figz").each(function(){   //copy src from gallery to TOC and main - for base64 nOK!
+				cl(this.id)
+				this.src= $("#tn" + this.id).src
+				$("#TOC" + this.id).attr("src",  this.src)
+				})
+				
+				//http://stackoverflow.com/questions/5540561/jquery-click-event-not-firing
+				$(".fig").click(function(e) {e.preventDefault(); 
+				for(k in e) if(e[k] != null && k.match(/width|css|style/)) cl("fig.e[" + k + "]= " + e[k]); 
+				w=this.width; 
+				$(this).css({width: (w==700)? 1000 :  (w==1000)? 1200 : (w==1200)? "100%" : 700})
+				})
+				.dblclick(function(e) {e.preventDefault(); ShowImg(this.src, this.alt, e.ctrlKey) });
+				
+				$("img.imgGal, img.TOCfig")
+				.mouseover(function() {this.title= this.alt; show(this) })
+				.mouseout(function() { show(0) })
+				.click(function() {gotoo(this.id.replace("tn","").replace("TOC","")) })
+				.dblclick(function(e) { e.preventDefault(); ShowImg(this.src, this.alt, e.ctrlKey) });
+				
+				
+				$("span.TOC").click(function() {gotoo(this.id.replace("TOC","")) })
+				
+				
+				$(".aToggle.DD1").click(function() {toggleD($(this), $(".H1 + + .aD"), $(".D1")) })
+				$(".aToggle.DD2").click(function() {toggleD($(this), $(".H2 + + .aD"), $(".D2")) })
+				$(".aToggle.DD3").click(function() {toggleD($(this), $(".H3 + + .aD"), $(".D3")) })
+				$(".aToggle.DD4").click(function() {toggleD($(this), $(".H4 + + .aD"), $(".D4")) })
+				$(".aToggle.TOContents").click(function() {toggleD($(this), $(".zz"), $("div.TOContents")) })
+				$(".aToggle.Gallery").click(function() {toggleD($(this), $(".zz"), $("div.Gallery")) })
+				$(".aToggleAllFig").click(function()   {toggleD($(this), $(".zz"), $("img,iframe"))}) //xxx: ; toggleD($(this), $(".zz"), $("iframe")) 
+				//$(".linu").click(function() { $("body").scrollTop(0) })
+				
+				$("#aToggleAll").click(function() {th= $(this)
+				if( th.text() =="(+)") {
+				$("div").show(); th.html(imgFold); $("a:not(.comments)").html(imgFold)   
+				} else { $("div").hide(); th.html("(+)"); $("a:not(.comments)").html("(+)")}
+				})
+				
+				
+				$(".aToggleComments").click(function() {ToggleComments2();})
+				
+				// $(".aD").click(function() //zzz does not work inside <code> can be explicitly call <a href="javascript:alert();" class="aD">
+				
+				})
+				</script>
+				<script>
+				
+				function cl(x){console.log(x)}
+				
+				function gotoo(i) {w= d.location= "#" + i;}
+				function gotop() {d.body.scrollTop = d.documentElement.scrollTop = 0}
+				
+				function linutoggle() {$("span.linu").toggle()}
+				
+				function ToggleFold(d){ 
+				$("#D" + d).animate({ height:"toggle"}, 600); th= $("#asp" + d); 
+				th.html(th.html()== "...}"  ? imgFold : "...}")
+				}
+				
+				function resize0(e) { w= e.width;
+				e.style.width= (w==700)? 1000 :  (w==1000)? 1200 : (w==1200)? "100%" : 700;
+				}
+				
+				function resize(i) {e=d.getElementById(i); w= e.width;
+				e.style.width= (w==700)? 1000 :  (w==1000)? 1200 : (w==1200)? "100%" : 700;
+				}
+				
+				
+				function ShowImg(src, capt, ctrl){ 
+				if(ctrl) {src= src.replace("png", "pdf")};
+				w= window.open(src, capt, "type=fullWindow,fullscreen,location='',height="+ screen.height+ ",width="+screen.width)
+				if(ctrl) { w.document.location= src} else {w.document.write("<html><title>" +  capt + "</title>" + capt + "<br/><img src='"  + src + "' /> </html>")};
+				w.title= capt;
+				w.document.title= capt;
+				w.focus()
+				}
+				
+				
+				function show(e){
+				$("#show").css({display : (e==0)? "none" : "block", border: (e==0)? "0" : "2px solid blue"})
+				
+				if(e != 0){
+				x= Math.min(e.offsetLeft+ e.width + 10, 500) //x= e.x+ e.width + 10;// ; if(x > 500) x= 500;
+				y= e.offsetTop+ e.height + 10               //y= e.y+ e.height + 10
+
+cl("e.src= " + e.src);
+				
+				$("#show").css({left: x, top: y})
+				$("#showFig").attr("src", e.src)
+				$("#showTxt").html("<br/>" +  e.alt)  //  +  e.alt)
+				
+				/* show properties of e 
+				for(k in e) if(1 || e[k] > 10 && e[k]+" " < "a") cl("e[" + k + "]= " + e[k]);
+				//for(k in e) if(e[k] != null && k.match(/^src$|^id$/)) {cl("e[" + k + "]= " + e[k])}; 
+				*/
+				}
+				}
+				
+				</script>
+<script>	
+				function toggleD(a, a2, di){ if( a.text() == "(+)") {
+				di.show(); a.html(imgFold); a2.html(imgFold)  
+				} else { di.hide(); a.html("(+)"); a2.html("...")}
+				}
+				
+				function ToggleComments2(){ 
+				var tt = document.getElementsByClassName("comment2"); 
+				var t0= tt[0].style.fontSize;
+				di= (t0 == "3px" || t0 == "") ? "12px" : ((t0 == "12px")? "1px" : "3px") ;
+				fc=  di == "1px" ? "white" : "green";
+				for (var i = 0; i < tt.length; i++) {tt[i].style.fontSize = di; tt[i].style.color=fc;}
+				}
+				</script>
+				
+<div id= "show" style= "position: absolute; left:-1000px; top:1px; border:solid blue; padding:5; display:none; background-color:white; -moz-border-radius: 10px; border-radius: 10px;">
+				<span id="showTxt"></span><br/>
+				<img id="showFig" src="#" height="401" style="left:0px" alt=""/>
+				</div>
+</body>
+</html>
