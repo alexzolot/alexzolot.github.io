@@ -129,7 +129,7 @@ z= 3
 #	in  $\LaTeX$  expressions, including inline  $y= 5 \sqrt{x_4^3}$ as well as stand alone equations. 
 
 
-#'	The same behind roxigen "#'" comments: 
+#'	The same behind roxygen "#'" comments: 
 #'			
 #'			$$  g\frac{d^2u}{dx^2} + L\sin u = 0 ; \quad  \sum_{n=1}^\infty {1\over n^2} = {\pi^2\over 6}  $$
 #'			or
